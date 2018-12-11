@@ -2050,7 +2050,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b60842;
+  background: #ed9d82;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3429,13 +3429,13 @@ pre {
   width: 580px;
   height: 234px;
   margin: 50px auto 0 auto;
-  background: url("https://www.daixiaorui.com/Public/images/head404.png") no-repeat;
+  background: url("/images/head404.png") no-repeat;
 }
 .txtbg404 {
   width: 499px;
   height: 169px;
   margin: 10px auto 0 auto;
-  background: url("https://www.daixiaorui.com/Public/images/txtbg404.png") no-repeat;
+  background: url("/images/txtbg404.png") no-repeat;
 }
 .txtbg404 .txtbox {
   width: 390px;
