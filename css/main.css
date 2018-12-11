@@ -2050,7 +2050,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ed9d82;
+  background: #f7a7db;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3437,10 +3437,17 @@ pre {
   margin: 10px auto 0 auto;
   background: url("/images/txtbg404.png") no-repeat;
 }
-.txtbg404 .txtbox {
+.txtbg404 {
   width: 390px;
   position: relative;
   top: 30px;
+  left: 60px;
+  color: #eee;
+  font-size: 13px;
+}
+.txtbox {
+  position: relative;
+  top: -30px;
   left: 60px;
   color: #eee;
   font-size: 13px;
