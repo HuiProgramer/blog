@@ -2050,7 +2050,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff96d6;
+  background: #ffff62;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3427,13 +3427,11 @@ pre {
 }
 .head404 {
   width: 60%;
-  height: 24%;
   margin: 50px auto 0 auto;
   background: url("/images/head404.png") no-repeat;
 }
 .txtbg404 {
   width: 40%;
-  height: 13%;
   margin: 10px auto 0 auto;
   background: url("/images/txtbg404.png") no-repeat;
   position: relative;
@@ -3447,18 +3445,18 @@ pre {
   color: #eee;
   font-size: 13px;
 }
-.txtbg404 .txtbox p {
+.txtbg404 .txtbox div {
   margin: 5px 0;
   line-height: 18px;
 }
 .txtbg404 .txtbox .paddingbox {
   padding-top: 15px;
 }
-.txtbg404 .txtbox p a {
+.txtbg404 .txtbox a {
   color: #eee;
   text-decoration: none;
 }
-.txtbg404 .txtbox p a:hover {
+.txtbg404 .txtbox a:hover {
   color: #fc9d1d;
   text-decoration: underline;
 }
