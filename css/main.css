@@ -2050,7 +2050,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f7a7db;
+  background: #ffa755;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3426,28 +3426,20 @@ pre {
   padding: 5px;
 }
 .head404 {
-  width: 580px;
-  height: 234px;
+  width: 60%;
+  height: 24%;
   margin: 50px auto 0 auto;
   background: url("/images/head404.png") no-repeat;
 }
 .txtbg404 {
-  width: 499px;
-  height: 169px;
+  width: 40%;
+  height: 13%;
   margin: 10px auto 0 auto;
   background: url("/images/txtbg404.png") no-repeat;
 }
-.txtbg404 {
-  width: 390px;
-  position: relative;
-  top: 30px;
-  left: 60px;
-  color: #eee;
-  font-size: 13px;
-}
 .txtbox {
   position: relative;
-  top: -30px;
+  top: -130px;
   left: 60px;
   color: #eee;
   font-size: 13px;
