@@ -2050,7 +2050,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #da67f6;
+  background: #00a49a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3425,39 +3425,26 @@ pre {
   border: dotted solid #666;
   padding: 5px;
 }
-.head404 {
-  width: 60%;
-  height: 24%;
-  margin: 50px auto 0 auto;
-  background: url("/images/head404.png") no-repeat;
-}
-.txtbg404 {
-  width: 40%;
-  margin: 10px auto 0 auto;
-  background: url("/images/txtbg404.png") no-repeat;
-  position: relative;
-  top: 50px;
-  left: 60px;
-}
 .txtbox {
   position: relative;
-  top: -100px;
-  left: 70px;
+  top: -200px;
+  text-align: center;
   color: #eee;
-  font-size: 13px;
+  font-size: 15px;
 }
-.txtbg404 .txtbox div {
+.txtbox div {
   margin: 5px 0;
   line-height: 18px;
 }
-.txtbg404 .txtbox .paddingbox {
-  padding-top: 15px;
+.txtbox .paddingbox {
+  padding-top: 3px;
 }
-.txtbg404 .txtbox a {
+.txtbox a {
+  border-bottom: 0px;
   color: #eee;
   text-decoration: none;
 }
-.txtbg404 .txtbox a:hover {
+.txtbox a:hover {
   color: #fc9d1d;
   text-decoration: underline;
 }
