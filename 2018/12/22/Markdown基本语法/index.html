@@ -110,7 +110,7 @@
 <meta property="og:description" content="MarkdownMarkdown介绍Markdown是一种轻量级的标记语言，使用普通的文本编辑器，通过简单的标记语法，就可以实现漂亮的排版，被越来越多的写作爱好者、程序员所使用。Markdown自成格式，不依赖任何编辑器，且易于传播，其语法十分简单，通过几分钟的简单学习，就可以实现基本的排版，然后专注于码字。 用途Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很多人用它写博">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://cdn2.jianshu.io/assets/web/nav-logo-4c7bbafe27adc892f3046e6978459bac.png">
-<meta property="og:updated_time" content="2018-12-23T10:49:18.440Z">
+<meta property="og:updated_time" content="2018-12-23T10:55:56.053Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown基本语法">
 <meta name="twitter:description" content="MarkdownMarkdown介绍Markdown是一种轻量级的标记语言，使用普通的文本编辑器，通过简单的标记语法，就可以实现漂亮的排版，被越来越多的写作爱好者、程序员所使用。Markdown自成格式，不依赖任何编辑器，且易于传播，其语法十分简单，通过几分钟的简单学习，就可以实现基本的排版，然后专注于码字。 用途Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很多人用它写博">
@@ -382,7 +382,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-12-23T18:49:18+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-23T18:55:56+08:00">
                 2018-12-23
               </time>
             
@@ -590,7 +590,7 @@
 <p>效果如下：<br><code>I&#39;m single code.</code></p>
 <h4 id="多行代码块"><a href="#多行代码块" class="headerlink" title="多行代码块"></a>多行代码块</h4><p>通过```code```来展示多行代码块内容<br>示例：</p>
 <blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; def example():</span><br><span class="line">&gt;     for i in range(10):</span><br><span class="line">&gt;         print(&quot;hello&quot;)</span><br><span class="line">&gt;\</span><br></pre></td></tr></table></figure>
+<p>```Python(指定语言)<br>def example():<br>&emsp;&emsp;for i in range(10):<br>&emsp;&emsp;&emsp;&emsp;print(“hello”)<br>```</p>
 </blockquote>
 <p>效果如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">example</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        print(<span class="string">"hello"</span>)</span><br></pre></td></tr></table></figure></p>
 <h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p><strong>语法：</strong><br>![图片alt](图片地址 ‘’图片title’’)</p>
@@ -600,8 +600,7 @@
 <p>效果如下：<br><a href="http://baidu.com" target="_blank" rel="noopener">baidu</a><br><a href="https://huiprogramer.github.io">博客</a></p>
 <h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p><strong>语法：</strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:---:|:---:|</span><br><span class="line">文字居中显示</span><br><span class="line">:---|:---</span><br><span class="line">文字靠左显示</span><br><span class="line">---:|---:</span><br><span class="line">文字靠右显示</span><br></pre></td></tr></table></figure></p>
 <p><strong>示例：</strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">示例1：</span><br><span class="line"></span><br><span class="line">表格文字居中|表格文字居中|表格文字居中</span><br><span class="line">:---:|:---:|:---:</span><br><span class="line">文字居中|文字居中|文字居中</span><br><span class="line">文字居中|文字居中|文字居中</span><br><span class="line">示例2：</span><br><span class="line"></span><br><span class="line">表格文字靠左|表格文字靠左|表格文字靠左</span><br><span class="line">:---|:---|:---</span><br><span class="line">文字靠左|文字靠左|文字靠左</span><br><span class="line">文字靠左|文字靠左|文字靠左</span><br><span class="line">示例3：</span><br><span class="line"></span><br><span class="line">表格文字靠右|表格文字靠右|表格文字靠右</span><br><span class="line">---:|---:|---:</span><br><span class="line">文字靠右|文字靠右|文字靠右</span><br><span class="line">文字靠右|文字靠右|文字靠右</span><br></pre></td></tr></table></figure></p>
-<p>示例1：</p>
-<table>
+<h4 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h4><table>
 <thead>
 <tr>
 <th style="text-align:center">表格文字居中</th>
@@ -622,8 +621,7 @@
 </tr>
 </tbody>
 </table>
-<p>示例2：</p>
-<table>
+<h4 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h4><table>
 <thead>
 <tr>
 <th style="text-align:left">表格文字靠左</th>
@@ -644,8 +642,7 @@
 </tr>
 </tbody>
 </table>
-<p>示例3：</p>
-<table>
+<h4 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h4><table>
 <thead>
 <tr>
 <th style="text-align:right">表格文字靠右</th>
@@ -960,7 +957,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Markdown"><span class="nav-number">1.</span> <span class="nav-text">Markdown</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown介绍"><span class="nav-number">1.1.</span> <span class="nav-text">Markdown介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用途"><span class="nav-number">1.2.</span> <span class="nav-text">用途</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用语法"><span class="nav-number">1.3.</span> <span class="nav-text">常用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用语法表格"><span class="nav-number">1.3.1.</span> <span class="nav-text">常用语法表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标题"><span class="nav-number">1.3.2.</span> <span class="nav-text">标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这是四级标题"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">这是四级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#这是五级标题"><span class="nav-number">1.3.2.1.1.</span> <span class="nav-text">这是五级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#这是六级标题"><span class="nav-number">1.3.2.1.1.1.</span> <span class="nav-text">这是六级标题</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体"><span class="nav-number">1.3.3.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序无序列表"><span class="nav-number">1.3.4.</span> <span class="nav-text">有序无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级引用"><span class="nav-number">1.3.5.</span> <span class="nav-text">块级引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码块"><span class="nav-number">1.3.6.</span> <span class="nav-text">代码块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单行代码块"><span class="nav-number">1.3.6.1.</span> <span class="nav-text">单行代码块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多行代码块"><span class="nav-number">1.3.6.2.</span> <span class="nav-text">多行代码块</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">1.3.7.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-number">1.3.8.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格"><span class="nav-number">1.3.9.</span> <span class="nav-text">表格</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Markdown"><span class="nav-number">1.</span> <span class="nav-text">Markdown</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown介绍"><span class="nav-number">1.1.</span> <span class="nav-text">Markdown介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用途"><span class="nav-number">1.2.</span> <span class="nav-text">用途</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用语法"><span class="nav-number">1.3.</span> <span class="nav-text">常用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用语法表格"><span class="nav-number">1.3.1.</span> <span class="nav-text">常用语法表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标题"><span class="nav-number">1.3.2.</span> <span class="nav-text">标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这是四级标题"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">这是四级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#这是五级标题"><span class="nav-number">1.3.2.1.1.</span> <span class="nav-text">这是五级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#这是六级标题"><span class="nav-number">1.3.2.1.1.1.</span> <span class="nav-text">这是六级标题</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体"><span class="nav-number">1.3.3.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序无序列表"><span class="nav-number">1.3.4.</span> <span class="nav-text">有序无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级引用"><span class="nav-number">1.3.5.</span> <span class="nav-text">块级引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码块"><span class="nav-number">1.3.6.</span> <span class="nav-text">代码块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单行代码块"><span class="nav-number">1.3.6.1.</span> <span class="nav-text">单行代码块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多行代码块"><span class="nav-number">1.3.6.2.</span> <span class="nav-text">多行代码块</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">1.3.7.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-number">1.3.8.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格"><span class="nav-number">1.3.9.</span> <span class="nav-text">表格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#示例1："><span class="nav-number">1.3.9.1.</span> <span class="nav-text">示例1：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例2："><span class="nav-number">1.3.9.2.</span> <span class="nav-text">示例2：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例3："><span class="nav-number">1.3.9.3.</span> <span class="nav-text">示例3：</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
