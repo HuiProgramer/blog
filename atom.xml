@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://HuiProgramer.github.io/"/>
-  <updated>2018-12-23T11:47:39.777Z</updated>
+  <updated>2018-12-24T14:57:02.956Z</updated>
   <id>http://HuiProgramer.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git教程</title>
+    <link href="http://HuiProgramer.github.io/Git%E6%95%99%E7%A8%8B.html"/>
+    <id>http://HuiProgramer.github.io/Git教程.html</id>
+    <published>2018-12-24T14:06:36.000Z</published>
+    <updated>2018-12-24T14:57:02.956Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;GIT-（分布式版本控制系统）&quot;&gt;&lt;a href=&quot;#GIT-（分布式版本控制系统）&quot; class=&quot;headerlink&quot; title=&quot;GIT （分布式版本控制系统）&quot;&gt;&lt;/a&gt;GIT （分布式版本控制系统）&lt;/h1&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://HuiProgramer.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Github" scheme="http://HuiProgramer.github.io/tags/Github/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown基本语法</title>
@@ -492,7 +518,7 @@
     <link href="http://HuiProgramer.github.io/%E7%AE%80%E5%8D%95%E5%8F%A5.html"/>
     <id>http://HuiProgramer.github.io/简单句.html</id>
     <published>2018-11-25T08:06:50.000Z</published>
-    <updated>2018-12-12T09:46:03.762Z</updated>
+    <updated>2018-12-24T15:09:59.379Z</updated>
     
     <summary type="html">
     
@@ -500,7 +526,7 @@
       
         
         
-          &lt;h2 id=&quot;第一章：简单句的核心&quot;&gt;&lt;a href=&quot;#第一章：简单句的核心&quot; class=&quot;headerlink&quot; title=&quot;第一章：简单句的核心&quot;&gt;&lt;/a&gt;第一章：简单句的核心&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;&lt;h3
+          &lt;h1 id=&quot;第一章：简单句的核心&quot;&gt;&lt;a href=&quot;#第一章：简单句的核心&quot; class=&quot;headerlink&quot; title=&quot;第一章：简单句的核心&quot;&gt;&lt;/a&gt;第一章：简单句的核心&lt;/h1&gt;&lt;h2 id=&quot;一、简单句的核心构成&quot;&gt;&lt;a
         
       
     
