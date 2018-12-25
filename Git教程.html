@@ -112,7 +112,8 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://huiprogramer.github.io/images/Git.jpg">
 <meta property="og:image" content="http://huiprogramer.github.io/images/GitExample.png">
-<meta property="og:updated_time" content="2018-12-24T14:57:02.956Z">
+<meta property="og:image" content="http://huiprogramer.github.io/images/Git版本库.jpg">
+<meta property="og:updated_time" content="2018-12-25T15:01:35.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git教程">
 <meta name="twitter:description" content="GIT （分布式版本控制系统）简介Git(读音为/gɪt/。)是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。 Git与SVN的区别GIT不仅仅是个版本控制系统，它也是个内容管理系统(CMS),工作管理系统等。如果你是一个具有使用SVN背景的人，你需要做">
@@ -394,8 +395,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-12-24T22:57:02+08:00">
-                2018-12-24
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-25T23:01:35+08:00">
+                2018-12-25
               </time>
             
           </span>
@@ -449,7 +450,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.5k
+                  3.1k
                 </span>
               
 
@@ -465,7 +466,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5分钟
+                  11分钟
                 </span>
               
             </div>
@@ -516,6 +517,38 @@
 <p>如果用了 <span style="color:red">–global</span> 选项，那么更改的配置文件就是位于你用户主目录下的那个，以后你所有的项目都会默认使用这里配置的用户信息。<br>如果要在某个特定的项目中使用其他名字或者电邮，只要去掉 <span style="color:red">–global</span> 选项重新配置即可，新的设定保存在当前项目的 .git/config 文件里。</p>
 <p><strong>注意:</strong> 用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
 <h3 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h3><p>要检查已有的配置信息，可以使用 git config –list 命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git config --list</span><br><span class="line">credential.helper=manager</span><br><span class="line">user.name=ProgramerHui</span><br><span class="line">user.email=1712817197@qq.com</span><br></pre></td></tr></table></figure></p>
+<h2 id="Git工作流程"><a href="#Git工作流程" class="headerlink" title="Git工作流程"></a>Git工作流程</h2><p> 一般工作流程如下：</p>
+<ul>
+<li>克隆 Git 资源作为工作目录。</li>
+<li>在克隆的资源上添加或修改文件。</li>
+<li>如果其他人修改了，你可以更新资源。</li>
+<li>在提交前查看修改。</li>
+<li>提交修改。</li>
+<li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</li>
+</ul>
+<h2 id="Git工作区、暂存区和版本库"><a href="#Git工作区、暂存区和版本库" class="headerlink" title="Git工作区、暂存区和版本库"></a>Git工作区、暂存区和版本库</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li>工作区：就是你在电脑里能看到的目录。</li>
+<li>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
+<li>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
+</ul>
+<p>下面这个图展示了工作区、版本库中的暂存区和版本库之间的关系：<br><img src="images/Git版本库.jpg" alt="Git工作区与版本库"><br>图中左侧为工作区，右侧为版本库。在版本库中标记为 “index” 的区域是暂存区（stage, index），标记为 “master” 的是 master 分支所代表的目录树。<br>图中我们可以看出此时 “HEAD” 实际是指向 master 分支的一个”游标”。所以图示的命令中出现 HEAD 的地方可以用 master 来替换。<br>图中的 objects 标识的区域为 Git 的对象库，实际位于 “.git/objects” 目录下，里面包含了创建的各种对象及内容。<br>当对工作区修改（或新增）的文件执行 “git add” 命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新的对象中，而该对象的ID被记录在暂存区的文件索引中。<br>当执行提交操作（git commit）时，暂存区的目录树写到版本库（对象库）中，master 分支会做相应的更新。即 master 指向的目录树就是提交时暂存区的目录树。<br>当执行 “git reset HEAD” 命令时，暂存区的目录树会被重写，被 master 分支指向的目录树所替换，但是工作区不受影响。<br>当执行 “git rm –cached <file>“ 命令时，会直接从暂存区删除文件，工作区则不做出改变。<br>当执行 “git checkout .” 或者 “git checkout – <file>“ 命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动。<br>当执行 “git checkout HEAD .” 或者 “git checkout HEAD <file>“ 命令时，会用 HEAD 指向的 master 分支中的全部或者部分文件替换暂存区和以及工作区中的文件。这个命令也是极具危险性的，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改动。</file></file></file></p>
+<h3 id="Git创建版本库-仓库"><a href="#Git创建版本库-仓库" class="headerlink" title="Git创建版本库(仓库)"></a>Git创建版本库(仓库)</h3><p>什么是版本库呢？版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。</p>
+<p>所以，创建一个版本库非常简单，首先，选择一个合适的地方，创建一个空目录：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> pwd</span><br><span class="line">/c/Users/Administrator</span><br><span class="line"><span class="meta">$</span> cd E:</span><br><span class="line"><span class="meta">$</span> mkdir Git</span><br><span class="line"><span class="meta">$</span> cd Git</span><br></pre></td></tr></table></figure></p>
+<p><code>pwd</code>命令用于显示当前目录，<code>cd</code>命令用于切换目录，<code>mkdir</code>用于创建文件夹，在我的Windows上，这个仓库位于<code>E:/Git</code>.</p>
+<p><strong>注意：</strong>文件夹应避免使用中文，防止乱码。</p>
+<h4 id="让文件夹成为真正的仓库"><a href="#让文件夹成为真正的仓库" class="headerlink" title="让文件夹成为真正的仓库"></a>让文件夹成为真正的仓库</h4><p>上面步骤只是创建了一个文件夹，严格意义上并不算是一个Git版本库，so，现在，我们让这个文件夹变成一个真正的仓库。</p>
+<p>输入<code>git init</code>命令把这个目录变成Git可管理的仓库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git init</span><br><span class="line">Initialized empty Git repository in E:/Git/.git/</span><br></pre></td></tr></table></figure></p>
+<p>瞬间Git就把仓库建好了，而且告诉你是一个空的仓库（empty Git repository），细心的读者可以发现当前目录下多了一个.git的目录，这个目录是Git来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。</p>
+<p>如果你没有看到.git目录，那是因为这个目录默认是隐藏的，用ls -ah命令就可以看见。</p>
+<h4 id="把文件添加到版本库"><a href="#把文件添加到版本库" class="headerlink" title="把文件添加到版本库"></a>把文件添加到版本库</h4><p>首先这里再明确一下，所有的版本控制系统，其实只能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等等，Git也不例外。版本控制系统可以告诉你每次的改动，比如在第5行加了一个单词“Linux”，在第8行删了一个单词“Windows”。而图片、视频这些二进制文件，虽然也能由版本控制系统管理，但没法跟踪文件的变化，只能把二进制文件每次改动串起来，也就是只知道图片从100KB改成了120KB，但到底改了啥，版本控制系统不知道，也没法知道。</p>
+<p>不幸的是，Microsoft的Word格式是二进制格式，因此，版本控制系统是没法跟踪Word文件的改动的，前面我们举的例子只是为了演示，如果要真正使用版本控制系统，就要以纯文本方式编写文件。<br><strong>建议：</strong>编辑文本最好使用<code>Notepad++</code>代替记事本，因为微软自带记事本会在每个文件开头添加0xefbbbf（十六进制）的字符。</p>
+<p>现在，我们编写一个readme.txt文件，内容如下:<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Hello,</span>Git!</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意:</strong>文件应该放在<code>Git</code>文件夹里，因为这是一个Git仓库，放到其他地方Git会找不到这个文件。</p>
+<h5 id="Git-add"><a href="#Git-add" class="headerlink" title="Git add"></a>Git add</h5><p>通过<code>git add</code>告诉Git，把文件添加到仓库（暂存区）：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git add readme.txt</span></span><br></pre></td></tr></table></figure></p>
+<p>执行上面的命令，没有任何显示,代表执行成功。</p>
+<h5 id="Git-commit"><a href="#Git-commit" class="headerlink" title="Git commit"></a>Git commit</h5><p>通过<code>git commit</code>告诉Git，把文件提交到仓库（版本库）：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"wrote a readme file"</span></span></span><br><span class="line">[master (root-commit) eacdf4e] wrote a readme file</span><br><span class="line"> 1 file changed, 2 insertions(+)</span><br><span class="line"> create mode 100644 readme.txt</span><br></pre></td></tr></table></figure></p>
+<p><strong>其中：</strong><code>git commit -m &quot;wrote a readme file&quot;</code>中的<code>-m &quot;xxx&quot;</code>代表本次提交的说明。<br>例如：<br><code>$ git commit -m &quot;本次提交解决了若干个BUG&quot;</code></p>
+<p>当然,提交说明也可以带表情，具体表情参考<a href="https://huiprogramer.github.io/emoji指南">Github表情提交指南</a>。</p>
 
       
     </div>
@@ -810,7 +843,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GIT-（分布式版本控制系统）"><span class="nav-number">1.</span> <span class="nav-text">GIT （分布式版本控制系统）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git与SVN的区别"><span class="nav-number">1.2.</span> <span class="nav-text">Git与SVN的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Git"><span class="nav-number">1.3.</span> <span class="nav-text">安装Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在Linux平台安装Git"><span class="nav-number">1.3.1.</span> <span class="nav-text">在Linux平台安装Git</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Debian-Ubuntu"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">Debian/Ubuntu</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Centos-RedHat"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">Centos/RedHat</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Mac-OS-X上安装Git"><span class="nav-number">1.3.2.</span> <span class="nav-text">在Mac OS X上安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Windows上安装Git"><span class="nav-number">1.3.3.</span> <span class="nav-text">在Windows上安装Git</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git配置"><span class="nav-number">1.4.</span> <span class="nav-text">Git配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户信息"><span class="nav-number">1.4.1.</span> <span class="nav-text">用户信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看配置信息"><span class="nav-number">1.4.2.</span> <span class="nav-text">查看配置信息</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GIT-（分布式版本控制系统）"><span class="nav-number">1.</span> <span class="nav-text">GIT （分布式版本控制系统）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git与SVN的区别"><span class="nav-number">1.2.</span> <span class="nav-text">Git与SVN的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Git"><span class="nav-number">1.3.</span> <span class="nav-text">安装Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在Linux平台安装Git"><span class="nav-number">1.3.1.</span> <span class="nav-text">在Linux平台安装Git</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Debian-Ubuntu"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">Debian/Ubuntu</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Centos-RedHat"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">Centos/RedHat</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Mac-OS-X上安装Git"><span class="nav-number">1.3.2.</span> <span class="nav-text">在Mac OS X上安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Windows上安装Git"><span class="nav-number">1.3.3.</span> <span class="nav-text">在Windows上安装Git</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git配置"><span class="nav-number">1.4.</span> <span class="nav-text">Git配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户信息"><span class="nav-number">1.4.1.</span> <span class="nav-text">用户信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看配置信息"><span class="nav-number">1.4.2.</span> <span class="nav-text">查看配置信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git工作流程"><span class="nav-number">1.5.</span> <span class="nav-text">Git工作流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git工作区、暂存区和版本库"><span class="nav-number">1.6.</span> <span class="nav-text">Git工作区、暂存区和版本库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.6.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git创建版本库-仓库"><span class="nav-number">1.6.2.</span> <span class="nav-text">Git创建版本库(仓库)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#让文件夹成为真正的仓库"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">让文件夹成为真正的仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#把文件添加到版本库"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">把文件添加到版本库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Git-add"><span class="nav-number">1.6.2.2.1.</span> <span class="nav-text">Git add</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Git-commit"><span class="nav-number">1.6.2.2.2.</span> <span class="nav-text">Git commit</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -864,7 +897,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.9k字</span>
+  <span class="post-count">博客全站共12.6k字</span>
 </div>
 
         
