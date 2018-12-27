@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://HuiProgramer.github.io/"/>
-  <updated>2018-12-25T15:01:35.751Z</updated>
+  <updated>2018-12-27T14:46:51.365Z</updated>
   <id>http://HuiProgramer.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://HuiProgramer.github.io/Git%E6%95%99%E7%A8%8B.html"/>
     <id>http://HuiProgramer.github.io/Git教程.html</id>
     <published>2018-12-24T14:06:36.000Z</published>
-    <updated>2018-12-25T15:01:35.751Z</updated>
+    <updated>2018-12-27T14:46:51.365Z</updated>
     
     <summary type="html">
     
@@ -39,6 +39,8 @@
     
     
       <category term="Github" scheme="http://HuiProgramer.github.io/tags/Github/"/>
+    
+      <category term="Git" scheme="http://HuiProgramer.github.io/tags/Git/"/>
     
   </entry>
   
