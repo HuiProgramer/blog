@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://HuiProgramer.github.io/about/index.html</loc>
+    
+    <lastmod>2019-01-05T12:16:25.487Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://HuiProgramer.github.io/links/index.html</loc>
     
     <lastmod>2019-01-05T09:51:08.161Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://HuiProgramer.github.io/apply/index.html</loc>
     
     <lastmod>2019-01-05T07:13:59.163Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://HuiProgramer.github.io/about/index.html</loc>
-    
-    <lastmod>2019-01-05T06:19:47.888Z</lastmod>
     
   </url>
   
