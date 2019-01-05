@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://HuiProgramer.github.io/links/index.html</loc>
+    
+    <lastmod>2019-01-05T07:18:49.860Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://HuiProgramer.github.io/apply/index.html</loc>
+    
+    <lastmod>2019-01-05T07:13:59.163Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://HuiProgramer.github.io/about/index.html</loc>
+    
+    <lastmod>2019-01-05T06:19:47.888Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://HuiProgramer.github.io/Git%E6%95%99%E7%A8%8B.html</loc>
     
     <lastmod>2018-12-31T12:51:13.778Z</lastmod>
@@ -159,13 +180,6 @@
     <loc>http://HuiProgramer.github.io/emoji%E6%8C%87%E5%8D%97.html</loc>
     
     <lastmod>2018-12-10T08:24:34.118Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://HuiProgramer.github.io/about/index.html</loc>
-    
-    <lastmod>2018-12-09T14:15:12.148Z</lastmod>
     
   </url>
   
