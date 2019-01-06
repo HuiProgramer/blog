@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://HuiProgramer.github.io/"/>
-  <updated>2019-01-06T08:21:50.967Z</updated>
+  <updated>2019-01-06T09:20:20.748Z</updated>
   <id>http://HuiProgramer.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java学习路线图</title>
+    <link href="http://HuiProgramer.github.io/Java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE.html"/>
+    <id>http://HuiProgramer.github.io/Java学习路线图.html</id>
+    <published>2019-01-06T08:33:58.000Z</published>
+    <updated>2019-01-06T09:20:20.748Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Java&quot;&gt;&lt;a href=&quot;#Java&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="http://HuiProgramer.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+      <category term="Java" scheme="http://HuiProgramer.github.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    
+    
+      <category term="Java学习路线" scheme="http://HuiProgramer.github.io/tags/Java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>Git教程（持续更新）</title>
@@ -514,32 +542,6 @@
     
     
       <category term="Github" scheme="http://HuiProgramer.github.io/tags/Github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>简单句</title>
-    <link href="http://HuiProgramer.github.io/%E7%AE%80%E5%8D%95%E5%8F%A5.html"/>
-    <id>http://HuiProgramer.github.io/简单句.html</id>
-    <published>2018-11-25T08:06:50.000Z</published>
-    <updated>2018-12-24T15:09:59.379Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;第一章：简单句的核心&quot;&gt;&lt;a href=&quot;#第一章：简单句的核心&quot; class=&quot;headerlink&quot; title=&quot;第一章：简单句的核心&quot;&gt;&lt;/a&gt;第一章：简单句的核心&lt;/h1&gt;&lt;h2 id=&quot;一、简单句的核心构成&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="英语" scheme="http://HuiProgramer.github.io/categories/%E8%8B%B1%E8%AF%AD/"/>
-    
-    
-      <category term="English-Syntax" scheme="http://HuiProgramer.github.io/tags/English-Syntax/"/>
     
   </entry>
   
