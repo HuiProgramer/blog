@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://HuiProgramer.github.io/"/>
-  <updated>2018-12-31T12:51:13.778Z</updated>
+  <updated>2019-01-06T08:21:50.967Z</updated>
   <id>http://HuiProgramer.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Git教程</title>
+    <title>Git教程（持续更新）</title>
     <link href="http://HuiProgramer.github.io/Git%E6%95%99%E7%A8%8B.html"/>
     <id>http://HuiProgramer.github.io/Git教程.html</id>
     <published>2018-12-24T14:06:36.000Z</published>
-    <updated>2018-12-31T12:51:13.778Z</updated>
+    <updated>2019-01-06T08:21:50.967Z</updated>
     
     <summary type="html">
     
@@ -36,6 +36,8 @@
     </summary>
     
       <category term="前端" scheme="http://HuiProgramer.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="版本控制系统" scheme="http://HuiProgramer.github.io/categories/%E5%89%8D%E7%AB%AF/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
     
     
       <category term="Github" scheme="http://HuiProgramer.github.io/tags/Github/"/>
