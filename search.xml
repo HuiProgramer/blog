@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2018年传智播客Python全栈学习(15期)]]></title>
+    <url>%2F2018%E5%B9%B4%E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2Python%E5%85%A8%E6%A0%88%E5%AD%A6%E4%B9%A0-15%E6%9C%9F.html</url>
+    <content type="text"><![CDATA[链接: https://pan.baidu.com/s/15UvzxxHaGJ-dWKz8A8CMlg提取码: mtdr PS:如果链接失效或者有任何问题，请在评论区留言。]]></content>
+      <categories>
+        <category>资源分享</category>
+        <category>学习教程</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>学习资料</tag>
+        <tag>学习视频</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2018慕课网全站付费资源（119个课程）]]></title>
+    <url>%2F2018%E6%85%95%E8%AF%BE%E7%BD%91%E5%85%A8%E7%AB%99%E4%BB%98%E8%B4%B9%E8%B5%84%E6%BA%90%EF%BC%88119%E4%B8%AA%E8%AF%BE%E7%A8%8B%EF%BC%89.html</url>
+    <content type="text"><![CDATA[2018慕课网全站付费资源，119个课程，912.45GB 集合了2018年最新慕课网全站付费购买视频，一共加起来有912.45GB的百度云资源视频免费分享 包括了所有的技术学习类的教程，所有教程名字都可以对应到慕课网上的视频教程名字 慕课网(IMOOC)是IT技能学习平台。慕课网(IMOOC)提供了丰富的移动端开发、php开发、web前端、android开发以及html5等视频教程资源公开课。并且富有交互性及趣味性，你还可以和朋友一起编程。 所有的教程都支持百度云在线观看，无需下载，当然如果你想看原画质，可以自己下载下来观看 链接：https://pan.baidu.com/s/1SmkhdtOVDWy0GHF5UC3cIg提取码：59ig PS:如果链接失效或者有任何问题，请在评论区留言。]]></content>
+      <categories>
+        <category>资源分享</category>
+        <category>学习教程</category>
+      </categories>
+      <tags>
+        <tag>学习资料</tag>
+        <tag>学习视频</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java学习路线图]]></title>
     <url>%2FJava%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE.html</url>
     <content type="text"><![CDATA[JavaJava是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程 。 Java具有简单性、面向对象、分布式、健壮性、安全性、平台独立与可移植性、多线程、动态性等特点 。Java可以编写桌面应用程序、Web应用程序、分布式系统和嵌入式系统应用程序等 。 Java学习路线图 如何学习JavaJava基础Java 是一门纯粹的面向对象的编程语言，所以除了基础语法之外，必须得弄懂它的 oop 特性：封装、继承、多态。此外还有泛型、反射的特性，很多框架的技术都依赖它，比如 Spring 核心的 Ioc 和 AOP，都用到了反射，而且 Java 自身的动态代理也是利用反射实现的。此外还有 Java 一些标准库也是非常常见，比如集合、I/O、并发，几乎在 Web 开发中无处不在，也是面试经常会被问到的，所以在自学 Java 后端之前，不妨先打好这些基础，另外还有 Java8 的一些新特性，也要重点关注，比如 Lambda 表达式、集合的 Stream 流操作、全新的 Date API 等等 数据库SQL建议学习MySQL在你了解了一些基础语法之后，就可以开始实战演练了，多练习熟练了就可以了。 JDBC你需要弄懂 JDBC API 的用法，其实它只是一组规范接口，所有数据库驱动只要实现了 JDBC，那么我们就可以通过标准的 API 调用相应的驱动，完全不用知道驱动是怎么实现的，这就是面向接口编程的好处。 Web基础Http 协议可以参考：Http协议 JSP你只要了解它其实就是一个 Servlet 就行了，关于它的一些标签用法，我认为可以直接忽略，因为现在互联网几乎没哪间公司还用 JSP，除了一些老旧的项目。现在都是流行前后端分离，单页应用，后端只做 API 接口的时代了，所以时间宝贵，把这些时间重点放在 Servlet 规范上面吧。 Tomcat它是一个 Web 容器，我们写的后端项目都要部署到Web容器才能运行，它其实是一个遵循 Http，通过 Socket 通信与客户端进行交互的服务端程序.可以参考：Tomcat结构及处理请求过程 Web 主流框架Java Web 框架多如牛毛，等你有一定经验了，你也可以写一个 Web 框架，网上很多说 Spring、Struts2、Hibernate 是 Java 三架马车，我只想说，那是很久远的事情了，我严重不推荐 Struts2、Hibernate，相信我，一开始只需要上手 Spring、SpringMVC、Mybatis 就可以了，特别是 Spring 框架，其实 Spring 家族的框架都是很不错的。 但是提醒一点就是，千万不要沉迷于各种框架不能自拔，以会多种用法而沾沾自喜，导致知其然而不知其所以然。 Spring核心思想就是 IOC 和 AOP： 谈谈对 Spring IOC 的理解 Spring 面向切面编程 SpringMVC它的思想是全部请求统一用一个 Servlet 去做请求转发与控制，这个 Servlet 叫 DispatcherServlet： SpringMVC 初始化过程 SpringMVC 处理请求过程 Mybatis它可实现动态拼装 sql，避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集： mybatis 入门教程 Mybatis 深入浅出系列 Web 框架进阶使用了 SSM 框架后，你会觉得框架也不过这么回事，如果你对 Spring 有过大概了解，你也会产生想写一个「山寨版」Spring 的心思了，一个轻量级 Web 框架主要具备以下功能： 可读取用户自定义配置文件，并以此来初始化框架； 具备 Bean 容器，管理项目的类的对象生命周期； 具备依赖注入，降低类之间的耦合性； 具备 AOP 功能，使项目可进行横向编程，可不改变原有代码的情况增加业务逻辑； 具备 MVC 框架模式。 其实除了 SSM 之外，Web 框架可谓是百家齐放，其中以 Spring 全家桶最为耀眼，在这里我极力推荐两个 Spring 家族框架：SpringBoot 和 SpringCloud。 SpringBoot弥补了 Spring 配置上的缺点，再也不用为繁杂的 xml 费劲精力了，堪称是 Java 后端开发的颠覆者，推荐书籍「Java EE 开发的颠覆者：SpringBoot实战」 SpringBoot 构建 web 项目 SpringBoot 自动化配置源码分析 自定义 SpringBoot Starter spring-boot-starter-tutorial SpringCloud一个微服务架构，能够将项目按照业务分成一个个微服务，每个微服务都可独立部署，服务之间互相协调。当一个项目越来越大时，随之而来的是越来越难以维护，此时将项目拆分成若干个微服务、单独维护、单独部署，也可以降低项目不同业务间的耦合度。推荐书籍「Spring Cloud 与 Docker 微服务架构实战」，这本书将 Docker 与微服务完美地结合在一起，堪称完美！ Spring Cloud 中文官网史上最简单的 Spring Cloud 教程 关于 Spring Cloud 的博客有： SpringCloud微服务架构之服务注册与发现SpringCloud微服务架构之服务消费者SpringCloud微服务架构之断路器SpringCloud微服务架构之服务网关 其它技术Redis一个高性能的 key-value 数据库，当有并发量很高的请求时，将数据缓存在 Redis 中，将提高服务器的响应性能，大大减轻数据库的压力。 redis 中文官网redis 教程 Git世界上最先进的分布式版本控制系统，建议所有初学者从命令行开始使用 Git！ Git 官网Git 教程 Maven一个用于构建项目的工具，将项目间的依赖通过 xml 完美地组织到一起，可通过编译插件将项目编译成字节码文件。还有类似的 Gradle 也是不错的选择。 maven 的 pom.xml 文件详解Linux：至少要求常用的命令会用，能够在 linux 环境下部署项目。Linux 命令大全最全的 SSH 连接远程终端教程 Docker简直是项目部署神器啊，来不及解释了，看下面一些 Docker 系列博客，开启 Docker 之旅吧！推荐书籍「Docker 技术入门与实战」，中国首部 Docker 著作！ Docker 实战（一）Docker 实战（二）Docker 实战（三）docker-deploy-tutorial]]></content>
