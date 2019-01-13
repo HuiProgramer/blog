@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://HuiProgramer.github.io/about/index.html</loc>
+    
+    <lastmod>2019-01-13T14:24:58.956Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://HuiProgramer.github.io/Android%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%90%88%E9%9B%86.html</loc>
     
     <lastmod>2019-01-11T15:09:43.096Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://HuiProgramer.github.io/Java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE.html</loc>
     
     <lastmod>2019-01-09T13:43:12.380Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://HuiProgramer.github.io/about/index.html</loc>
-    
-    <lastmod>2019-01-09T13:33:50.902Z</lastmod>
     
   </url>
   
