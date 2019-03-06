@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Bean之间的关系]]></title>
+    <url>%2FBean%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB.html</url>
+    <content type="text"><![CDATA[Bean之间的关系：继承；依赖Bean配置的继承Spring允许继承bean的配置，被继承的bean成为父bean。继承这个父Bean的Bean称为子Bean子Bean从父Bean中继承配置，包括Bean的属性配置子Bean也可以覆盖从父Bean继承过来的配置父Bean可以作为配置模板，也可以作为Bean的实例。若只想把父Bean作为模板，可以设置&lt;bean&gt;的abstract属性为true，这样Spring将不会实例化这个Bean并不是&lt;bean&gt;元素里的所有属性都会被继承。比如：autowire，abstract等。也可以忽略父Bean的class属性，让子Bean指定自己的类，而共享相同的属性配置，但此时abstract必须设为true继承父Bean实例：123456&lt;bean id = "address" class = "com.spring.helloWorld.Address" p:city = "Beijing" p:street="WuDaoKou"&gt;&lt;/bean&gt;&lt;!-- bean 配置的继承：使用 bean 的 parent 属性指定继承哪个 bean 的配置 --&gt;&lt;bean id = "address2" class = "com.spring.helloWorld.Address" p:street="DaZhongSi" parent = "address"&gt;&lt;/bean&gt;输出结果：Address [city=BeiJing,street=WuDaoKou]Address [city=BeiJing,street=DaZhongSi]抽象Bean实例：12345678&lt;!-- 抽象Bean：bean的abstract属性为true的bean，不能被IOC容器实例化，可以作为模板被继承。若某一个bean的class属性没有指定，则该bean必须是一个抽象bean。 --&gt;&lt;bean id = "address" p:city = "Beijing" p:street="WuDaoKou" abstract = "true"&gt;&lt;/bean&gt;&lt;!-- 继承模板Bean --&gt;&lt;bean id = "address2" class = "com.spring.helloWorld.Address" parent = "address"&gt;&lt;/bean&gt;输出结果：Address [city=BeiJing,street=WuDaoKou]Address [city=BeiJing,street=WuDaoKou]依赖Bean配置Spring允许用户通过depends-on属性设定Bean前置依赖的Bean，前置依赖的Bean会在本Bean实例化之前创建好如果前置依赖于多个Bean，则可以通过逗号，空格的方式配置Bean的名称依赖Bean实例：1234567&lt;!-- 缺少这个bean会报错 --&gt;&lt;bean id = "car" class = "com.spring.helloWorld.Address"p:brand = "Audi" p:price = "300000" &gt;&lt;/bean&gt;&lt;!-- 要求配置Person时，必须有一个关联的car！换句话说person这个bean依赖于Car这个bean，如果缺少就会报错 --&gt;&lt;bean id = "person" class = "com.spring.helloWorld.Address"p:name = "Tom" p:address-ref="address2" depends-on="car"&gt;&lt;/bean&gt;]]></content>
+      <categories>
+        <category>后端</category>
+        <category>Java</category>
+        <category>Spring</category>
+      </categories>
+      <tags>
+        <tag>SSM</tag>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Spring自动装配]]></title>
     <url>%2FSpring%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D.html</url>
     <content type="text"><![CDATA[XML配置里的Bean自动装配Spring IOC容器可以自动装配Bean。需要做的仅仅是在&lt;bean&gt;的autowire属性里指定自动装配的模式byType(根据类型自动装配)：若IOC容器中有多个与目标Bean类型一致的Bean。在这种情况下，Spring将无法判定哪个Bean最适合属性，所以不能执行自动装配。byName(根据名称自动装配)：必须将目标Bean的名称和属性名设置完全相同。constructor（通过构造器自动装配）：当Bean中存在多个构造器时，此种自动装配方式将会很复杂。不推荐使用自动装配byName实例：123456789&lt;!-- 通过p命名空间为bean的属性赋值，需要先导入 p 命名空间,相对于传统的配置更加的简洁 --&gt;&lt;bean id = "address" calss = "com.spring.hellowrld.address" p:city = "Beijing" p:street = "HuiLongGuan"&gt;&lt;/bean&gt;&lt;!-- 通过p命名空间为bean的属性赋值，需要先导入 p 命名空间,相对于传统的配置更加的简洁 --&gt;&lt;bean id = "car" calss = "com.spring.hellowrld.Car" p:brand = "Audi" p:price = "30000"&gt;&lt;/bean&gt;&lt;!-- 可以使用 autowire 属性指定自动装配的方式 byName 根据 bean 的名字和当前bean的 setter 风格的属性名进行自动装配，若有匹配的，则进行自动装配，若没有匹配的，则不装配 --&gt;&lt;bean id = "Person" calss = "com.spring.hellowrld.person" p:name = "Tom" autowire = "byName"&gt;&lt;/bean&gt;自动装配byType实例：12345678&lt;!-- 通过p命名空间为bean的属性赋值，需要先导入 p 命名空间,相对于传统的配置更加的简洁 --&gt;&lt;bean id = "address2" calss = "com.spring.hellowrld.address" p:city = "Beijing" p:street = "HuiLongGuan"&gt;&lt;/bean&gt;&lt;!-- 通过p命名空间为bean的属性赋值，需要先导入 p 命名空间,相对于传统的配置更加的简洁 --&gt;&lt;bean id = "car2" calss = "com.spring.hellowrld.Car" p:brand = "Audi" p:price = "30000"&gt;&lt;/bean&gt;&lt;!-- byType 根据 bean 的类型和当前 bean 的属性的类型进行自动装配，若IOC容器中有一个以上的类型匹配的bean，则抛异常。 --&gt;&lt;bean id = "Person2" calss = "com.spring.hellowrld.person" p:name = "Rose" autowire = "byType"&gt;&lt;/bean&gt;XML配置里的Bean自动装配的缺点在 Bean 配置文建立设置 autowire 属性进行自动装配将会装配 Bean 的所有属性。然而，若值希望装配个别属性时， autowire属性就不够灵活了。autowire 属性要么根据类型自动装配，要么根据名称自动装配，不能两者兼而有之。一般情况下，在实际项目中很少使用自动装配功能，因为和自动装配功能所带来的好处比起来，明确清晰的配置文档更有说服力一些。]]></content>
