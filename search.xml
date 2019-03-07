@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[黑帽教程(2019版)]]></title>
+    <url>%2F%E9%BB%91%E5%B8%BD%E6%95%99%E7%A8%8B-2019%E7%89%88.html</url>
+    <content type="text"><![CDATA[示意图提取链接普通版：https://pan.baidu.com/s/1fsicWxR33tFalnsTJFPs8A 提取码: b7rd高级版：https://pan.baidu.com/s/1p67O81gawoJFQLARUEUDpw 提取码: 8j9aPS:如果链接失效或者有任何问题，请在评论区留言。声明：此资源由本站收集整理于网络，如有侵权，请联系 HuiProgramer@Outlook.com 删除处理。]]></content>
+      <categories>
+        <category>全栈开发</category>
+        <category>黑帽</category>
+      </categories>
+      <tags>
+        <tag>黑客</tag>
+        <tag>入侵</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Bean使用外部属性]]></title>
+    <url>%2FBean%E4%BD%BF%E7%94%A8%E5%A4%96%E9%83%A8%E5%B1%9E%E6%80%A7.html</url>
+    <content type="text"><![CDATA[使用外部属性在配置文件里配置Bean时，有时需要在Bean的配置里混入系统部署的细节信息（例如：文件路径，数据源配置信息等）。而这些部署细节实际上需要和Bean部署相分离Spring提供一个PropertyPlaceholderConfigurer的BeanFactory后置处理器，这个处理器允许用户将Bean配置的部分内容外移到属性文件中，可以在Bean配置文件里使用形式为${var}的变量，PropertyPlaceholderConfigurer从属性文件里加载属性，并使用这些属性来替换变量。Spring还允许在属性文件中使用${propName},以实现属性之间的相互引用。注册PropertyPlaceholderConfigurerspring2.0：123&lt;bean class = "org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"&gt; &lt;property name = "Location" value = "classpath:jdbc.properties"&gt;&lt;/property&gt;&lt;/bean&gt;Spring2.5之后：可通过&lt;context:property-placeholder&gt;元素简化：&lt;beans&gt;中添加context Schema定义在配置文件中加入如下配置：1&lt;context:property-placeholder location= "classpath:db.properties"/&gt;db.properties1234user=rootpassword=1230driverClass=com.mysql.jdbc.DriverjdbcUrl=jdbc:mysql:///testbean.xml12345678910&lt;!-- 导入属性文件 --&gt;&lt;context:property-placeholder location= "classpath:db.properties"/&gt;&lt;!-- 使用外部化属性文件的属性 --&gt;&lt;bean id = "dataSource" class = "com.mchange.v2.c3p0.ComboPoolLedDataSource"&gt; &lt;property name = "user" value = "$&#123;user&#125;"&gt;&lt;/property&gt; &lt;property name = "password" value = "$&#123;password&#125;"&gt;&lt;/property&gt; &lt;property name = "driverClass" value = "$&#123;driverClass&#125;"&gt;&lt;/property&gt; &lt;property name = "jdbcUrl" value = "$&#123;jdbcUrl"&gt;&lt;/property&gt;&lt;/bean&gt;输出结果：连接成功]]></content>
+      <categories>
+        <category>后端</category>
+        <category>Java</category>
+        <category>Spring</category>
+      </categories>
+      <tags>
+        <tag>SSM</tag>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Bean的作用域]]></title>
+    <url>%2FBean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F.html</url>
+    <content type="text"><![CDATA[Bean的作用域：singleton；prototype；WEB环境作用域配置作用域singletonbean.xml1234&lt;!-- 默认作用域是singleton（单例），通过scope配置 。 容器初始化时创建bean实例。在整个容器的生命周期内置创建这一个bean。--&gt;&lt;bean id = "car" class = "com.spring.helloWorld.Car"p:brand = "Audi" p:price = "300000" scope="singleton"&gt;&lt;/bean&gt;Main.java123456public static void main(String[] args)&#123; ApplicationContext ctx = new ClassPathXmlApplicationContext("bean.xml"); Car car = (Car)ctx.getBean("car"); Car car2 = (Car)ctx.getBean("car"); System.out.println(car == car2);&#125;输出结果：true配置作用域prototypebean.xml1234&lt;!-- 此作用域是prototype（不是单例），通过scope配置。 prototype：原型的，容器初始化时不创建bean的实例，而在每次请求时都创建一个新的Bean实例，并返回。--&gt;&lt;bean id = "car" class = "com.spring.helloWorld.Car"p:brand = "Audi" p:price = "300000" scope="prototype"&gt;&lt;/bean&gt;Main.java`Javapublic static void main(String[] args){ApplicationContext ctx = new ClassPathXmlApplicationContext(“bean.xml”);Car car = (Car)ctx.getBean(“car”);Car car2 = (Car)ctx.getBean(“car”);System.out.println(car == car2);}输出结果：false]]></content>
+      <categories>
+        <category>后端</category>
+        <category>Java</category>
+        <category>Spring</category>
+      </categories>
+      <tags>
+        <tag>SSM</tag>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Bean之间的关系]]></title>
     <url>%2FBean%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB.html</url>
-    <content type="text"><![CDATA[Bean之间的关系：继承；依赖Bean配置的继承Spring允许继承bean的配置，被继承的bean成为父bean。继承这个父Bean的Bean称为子Bean子Bean从父Bean中继承配置，包括Bean的属性配置子Bean也可以覆盖从父Bean继承过来的配置父Bean可以作为配置模板，也可以作为Bean的实例。若只想把父Bean作为模板，可以设置&lt;bean&gt;的abstract属性为true，这样Spring将不会实例化这个Bean并不是&lt;bean&gt;元素里的所有属性都会被继承。比如：autowire，abstract等。也可以忽略父Bean的class属性，让子Bean指定自己的类，而共享相同的属性配置，但此时abstract必须设为true继承父Bean实例：123456&lt;bean id = "address" class = "com.spring.helloWorld.Address" p:city = "Beijing" p:street="WuDaoKou"&gt;&lt;/bean&gt;&lt;!-- bean 配置的继承：使用 bean 的 parent 属性指定继承哪个 bean 的配置 --&gt;&lt;bean id = "address2" class = "com.spring.helloWorld.Address" p:street="DaZhongSi" parent = "address"&gt;&lt;/bean&gt;输出结果：Address [city=BeiJing,street=WuDaoKou]Address [city=BeiJing,street=DaZhongSi]抽象Bean实例：12345678&lt;!-- 抽象Bean：bean的abstract属性为true的bean，不能被IOC容器实例化，可以作为模板被继承。若某一个bean的class属性没有指定，则该bean必须是一个抽象bean。 --&gt;&lt;bean id = "address" p:city = "Beijing" p:street="WuDaoKou" abstract = "true"&gt;&lt;/bean&gt;&lt;!-- 继承模板Bean --&gt;&lt;bean id = "address2" class = "com.spring.helloWorld.Address" parent = "address"&gt;&lt;/bean&gt;输出结果：Address [city=BeiJing,street=WuDaoKou]Address [city=BeiJing,street=WuDaoKou]依赖Bean配置Spring允许用户通过depends-on属性设定Bean前置依赖的Bean，前置依赖的Bean会在本Bean实例化之前创建好如果前置依赖于多个Bean，则可以通过逗号，空格的方式配置Bean的名称依赖Bean实例：1234567&lt;!-- 缺少这个bean会报错 --&gt;&lt;bean id = "car" class = "com.spring.helloWorld.Address"p:brand = "Audi" p:price = "300000" &gt;&lt;/bean&gt;&lt;!-- 要求配置Person时，必须有一个关联的car！换句话说person这个bean依赖于Car这个bean，如果缺少就会报错 --&gt;&lt;bean id = "person" class = "com.spring.helloWorld.Address"p:name = "Tom" p:address-ref="address2" depends-on="car"&gt;&lt;/bean&gt;]]></content>
+    <content type="text"><![CDATA[Bean之间的关系：继承；依赖Bean配置的继承Spring允许继承bean的配置，被继承的bean成为父bean。继承这个父Bean的Bean称为子Bean子Bean从父Bean中继承配置，包括Bean的属性配置子Bean也可以覆盖从父Bean继承过来的配置父Bean可以作为配置模板，也可以作为Bean的实例。若只想把父Bean作为模板，可以设置&lt;bean&gt;的abstract属性为true，这样Spring将不会实例化这个Bean并不是&lt;bean&gt;元素里的所有属性都会被继承。比如：autowire，abstract等。也可以忽略父Bean的class属性，让子Bean指定自己的类，而共享相同的属性配置，但此时abstract必须设为true继承父Bean实例：123456&lt;bean id = "address" class = "com.spring.helloWorld.Address" p:city = "Beijing" p:street="WuDaoKou"&gt;&lt;/bean&gt;&lt;!-- bean 配置的继承：使用 bean 的 parent 属性指定继承哪个 bean 的配置 --&gt;&lt;bean id = "address2" class = "com.spring.helloWorld.Address" p:street="DaZhongSi" parent = "address"&gt;&lt;/bean&gt;输出结果：Address [city=BeiJing,street=WuDaoKou]Address [city=BeiJing,street=DaZhongSi]抽象Bean实例：12345678&lt;!-- 抽象Bean：bean的abstract属性为true的bean，不能被IOC容器实例化，可以作为模板被继承。若某一个bean的class属性没有指定，则该bean必须是一个抽象bean。 --&gt;&lt;bean id = "address" p:city = "Beijing" p:street="WuDaoKou" abstract = "true"&gt;&lt;/bean&gt;&lt;!-- 继承模板Bean --&gt;&lt;bean id = "address2" class = "com.spring.helloWorld.Address" parent = "address"&gt;&lt;/bean&gt;输出结果：Address [city=BeiJing,street=WuDaoKou]Address [city=BeiJing,street=WuDaoKou]依赖Bean配置Spring允许用户通过depends-on属性设定Bean前置依赖的Bean，前置依赖的Bean会在本Bean实例化之前创建好如果前置依赖于多个Bean，则可以通过逗号，空格的方式配置Bean的名称依赖Bean实例：1234567&lt;!-- 缺少这个bean会报错 --&gt;&lt;bean id = "car" class = "com.spring.helloWorld.Car"p:brand = "Audi" p:price = "300000" &gt;&lt;/bean&gt;&lt;!-- 要求配置Person时，必须有一个关联的car！换句话说person这个bean依赖于Car这个bean，如果缺少就会报错 --&gt;&lt;bean id = "person" class = "com.spring.helloWorld.person"p:name = "Tom" p:address-ref="address2" depends-on="car"&gt;&lt;/bean&gt;]]></content>
       <categories>
         <category>后端</category>
         <category>Java</category>
