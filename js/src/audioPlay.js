@@ -1,3 +1,3 @@
-// build time:Wed Mar 13 2019 21:04:30 GMT+0800 (GMT+08:00)
+// build time:Thu Mar 14 2019 22:57:11 GMT+0800 (GMT+08:00)
 var timeout,rotate=0;var audio=document.getElementById("music1");function startAnim(){timeout=setInterval(function(){var t=document.getElementById("img");var e="rotate("+rotate+"deg)";t.style.transform=e;t.style["-moz-transform"]=e;t.style["-webkit-transform"]=e;t.style["-o-transform"]=e;t.style["-ms-transform"]=e;rotate+=6;if(rotate>360){rotate=0}},30);audio.play()}function stopAnim(){clearInterval(timeout);timeout=null;audio.pause()}startAnim();
 //rebuild by neat 
