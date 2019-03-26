@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.52share.online/"/>
-  <updated>2019-03-21T14:18:57.152Z</updated>
+  <updated>2019-03-26T12:47:17.281Z</updated>
   <id>http://www.52share.online/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mybatis教程（简单入门）</title>
+    <link href="http://www.52share.online/Mybatis-%E5%85%A5%E9%97%A8.html"/>
+    <id>http://www.52share.online/Mybatis-入门.html</id>
+    <published>2019-03-26T07:53:07.000Z</published>
+    <updated>2019-03-26T12:47:17.281Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!-- build time:Tue Mar 26 2019 20:53:17 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Mybatis入门&quot;&gt;&lt;a href=&quot;#Mybatis入门&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="http://www.52share.online/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+      <category term="Java" scheme="http://www.52share.online/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    
+      <category term="Mybatis" scheme="http://www.52share.online/categories/%E5%90%8E%E7%AB%AF/Java/Mybatis/"/>
+    
+    
+      <category term="SSM" scheme="http://www.52share.online/tags/SSM/"/>
+    
+      <category term="SQL" scheme="http://www.52share.online/tags/SQL/"/>
+    
+  </entry>
   
   <entry>
     <title>尚硅谷前端学习视频（2018）</title>
@@ -29,7 +61,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;2018最全H5前端资料集合&quot;&gt;&lt;a href=&quot;#2018最全H5前端资料集合&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;2018最全H5前端资料集合&quot;&gt;&lt;a href=&quot;#2018最全H5前端资料集合&quot; class=&quot;headerlink&quot;
         
       
     
@@ -61,7 +93,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:44 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;AOP-前奏&quot;&gt;&lt;a href=&quot;#AOP-前奏&quot; class=&quot;headerlink&quot; title=&quot;AOP
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;AOP-前奏&quot;&gt;&lt;a href=&quot;#AOP-前奏&quot; class=&quot;headerlink&quot; title=&quot;AOP
         
       
     
@@ -95,7 +127,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;p&gt;&lt;img
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;p&gt;&lt;img
         
       
     
@@ -127,7 +159,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:44 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;通过调用静态工厂方法创建Bean&quot;&gt;&lt;a href=&quot;#通过调用静态工厂方法创建Bean&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;通过调用静态工厂方法创建Bean&quot;&gt;&lt;a href=&quot;#通过调用静态工厂方法创建Bean&quot; class=&quot;headerlink&quot;
         
       
     
@@ -159,7 +191,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;JavaConfig&quot;&gt;&lt;a href=&quot;#JavaConfig&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;JavaConfig&quot;&gt;&lt;a href=&quot;#JavaConfig&quot; class=&quot;headerlink&quot;
         
       
     
@@ -193,7 +225,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:44 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;IOC容器中Bean的生命周期方法&quot;&gt;&lt;a href=&quot;#IOC容器中Bean的生命周期方法&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;IOC容器中Bean的生命周期方法&quot;&gt;&lt;a href=&quot;#IOC容器中Bean的生命周期方法&quot; class=&quot;headerlink&quot;
         
       
     
@@ -225,7 +257,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Spring表达式语言：SpEL&quot;&gt;&lt;a href=&quot;#Spring表达式语言：SpEL&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Spring表达式语言：SpEL&quot;&gt;&lt;a href=&quot;#Spring表达式语言：SpEL&quot; class=&quot;headerlink&quot;
         
       
     
@@ -257,7 +289,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;目录结构&quot;&gt;&lt;a href=&quot;#目录结构&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;目录结构&quot;&gt;&lt;a href=&quot;#目录结构&quot; class=&quot;headerlink&quot;
         
       
     
@@ -287,7 +319,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:44 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;示意图&quot;&gt;&lt;a href=&quot;#示意图&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;示意图&quot;&gt;&lt;a href=&quot;#示意图&quot; class=&quot;headerlink&quot;
         
       
     
@@ -317,7 +349,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;使用外部属性&quot;&gt;&lt;a href=&quot;#使用外部属性&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;使用外部属性&quot;&gt;&lt;a href=&quot;#使用外部属性&quot; class=&quot;headerlink&quot;
         
       
     
@@ -349,7 +381,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Bean的作用域：singleton；prototype；WEB环境作用域&quot;&gt;&lt;a
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Bean的作用域：singleton；prototype；WEB环境作用域&quot;&gt;&lt;a
         
       
     
@@ -381,7 +413,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Bean之间的关系：继承；依赖&quot;&gt;&lt;a href=&quot;#Bean之间的关系：继承；依赖&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Bean之间的关系：继承；依赖&quot;&gt;&lt;a href=&quot;#Bean之间的关系：继承；依赖&quot; class=&quot;headerlink&quot;
         
       
     
@@ -413,7 +445,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;XML配置里的Bean自动装配&quot;&gt;&lt;a href=&quot;#XML配置里的Bean自动装配&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;XML配置里的Bean自动装配&quot;&gt;&lt;a href=&quot;#XML配置里的Bean自动装配&quot; class=&quot;headerlink&quot;
         
       
     
@@ -445,7 +477,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;智能社Javascript专题&quot;&gt;&lt;a href=&quot;#智能社Javascript专题&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;智能社Javascript专题&quot;&gt;&lt;a href=&quot;#智能社Javascript专题&quot; class=&quot;headerlink&quot;
         
       
     
@@ -477,7 +509,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;启用腾讯云图床错误&quot;&gt;&lt;a href=&quot;#启用腾讯云图床错误&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;启用腾讯云图床错误&quot;&gt;&lt;a href=&quot;#启用腾讯云图床错误&quot; class=&quot;headerlink&quot;
         
       
     
@@ -509,7 +541,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;IOC-amp-DI概述&quot;&gt;&lt;a href=&quot;#IOC-amp-DI概述&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;IOC-amp-DI概述&quot;&gt;&lt;a href=&quot;#IOC-amp-DI概述&quot; class=&quot;headerlink&quot;
         
       
     
@@ -541,7 +573,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;创建Spring项目&quot;&gt;&lt;a href=&quot;#创建Spring项目&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;创建Spring项目&quot;&gt;&lt;a href=&quot;#创建Spring项目&quot; class=&quot;headerlink&quot;
         
       
     
@@ -573,7 +605,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;第一部分&quot;&gt;&lt;a href=&quot;#第一部分&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;第一部分&quot;&gt;&lt;a href=&quot;#第一部分&quot; class=&quot;headerlink&quot;
         
       
     
@@ -605,7 +637,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 22 2019 13:48:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Android核心技术&quot;&gt;&lt;a href=&quot;#Android核心技术&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Tue Mar 26 2019 18:15:56 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Android核心技术&quot;&gt;&lt;a href=&quot;#Android核心技术&quot; class=&quot;headerlink&quot;
         
       
     
@@ -616,38 +648,6 @@
       <category term="学习教程" scheme="http://www.52share.online/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
     
       <category term="Android" scheme="http://www.52share.online/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/Android/"/>
-    
-    
-      <category term="学习资料" scheme="http://www.52share.online/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
-    
-      <category term="学习视频" scheme="http://www.52share.online/tags/%E5%AD%A6%E4%B9%A0%E8%A7%86%E9%A2%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2018年传智播客Python全栈学习(15期)</title>
-    <link href="http://www.52share.online/2018%E5%B9%B4%E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2Python%E5%85%A8%E6%A0%88%E5%AD%A6%E4%B9%A0-15%E6%9C%9F.html"/>
-    <id>http://www.52share.online/2018年传智播客Python全栈学习-15期.html</id>
-    <published>2019-01-09T13:58:40.000Z</published>
-    <updated>2019-03-11T13:02:15.971Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;!-- build time:Fri Mar 22 2019 13:48:42 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="资源分享" scheme="http://www.52share.online/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/"/>
-    
-      <category term="学习教程" scheme="http://www.52share.online/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="Python" scheme="http://www.52share.online/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/Python/"/>
     
     
       <category term="学习资料" scheme="http://www.52share.online/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
