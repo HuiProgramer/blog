@@ -784,6 +784,15 @@ function musictooltip() {
 		}
 	})
 }
+function b2top(a, b, d) {
+	if (10 >= b && 0 <= b) {
+		var e = 100 * b;
+		$(a).css({
+			backgroundPosition: "0 -" + e + "px"
+		});
+		setTimeout("b2top('" + a + "'," + (d ? b + 1 : b - 1) + "," + d + ")", 50)
+	}
+}
 $(document).ready(function() {
 	$(window).keydown(function(event) {
 		var key = event.keyCode;
@@ -796,6 +805,19 @@ $(document).ready(function() {
 				$('.pause', $player).click();
 			}
 		}
+	});
+	$(window).scroll(function() {
+		500 < $(this).scrollTop() ? $(".backtop,.link-back2top").fadeIn() : $(".backtop,.link-back2top").fadeOut()
+	});
+	$(".backtop").hover(function() {
+		b2top(".backtop", 0, !0)
+	}, function() {
+		b2top(".backtop", 3)
+	}).click(function() {
+		$("body,html").animate({
+			scrollTop: 0
+		}, 600, function() {});
+		b2top(".backtop", 3)
 	});
 });
 $(window).scroll(function() {
