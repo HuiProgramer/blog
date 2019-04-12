@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.52share.online/about/index.html</loc>
+    
+    <lastmod>2019-04-12T12:12:29.270Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.52share.online/message/index.html</loc>
+    
+    <lastmod>2019-04-12T11:25:15.440Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.52share.online/links/index.html</loc>
+    
+    <lastmod>2019-04-12T11:10:15.266Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.52share.online/Git%E6%95%99%E7%A8%8B.html</loc>
     
-    <lastmod>2019-04-12T08:40:33.036Z</lastmod>
+    <lastmod>2019-04-12T09:09:11.670Z</lastmod>
     
   </url>
   
@@ -103,20 +124,6 @@
     <loc>https://www.52share.online/Mybatis-%E5%85%A5%E9%97%A8.html</loc>
     
     <lastmod>2019-04-11T11:48:58.969Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.52share.online/links/index.html</loc>
-    
-    <lastmod>2019-04-02T22:47:17.049Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.52share.online/about/index.html</loc>
-    
-    <lastmod>2019-04-02T14:52:28.550Z</lastmod>
     
   </url>
   

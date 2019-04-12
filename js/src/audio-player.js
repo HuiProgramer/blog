@@ -104,13 +104,13 @@ var wenkmList;
 		$songFrom1.html('<a style="color:#f00">\u97f3\u4e50\u64ad\u653e\u5668</a>');
 		$songFrom3.html('<i class="fa fa-times-circle"></i> \u6b4c\u8bcd\u672a\u8f7d\u5165');
 		$player.css({
-					background: '#38343e'
+					background: 'rgba(52, 52, 52, 0.8)'
 				});
 				$player1.css({
-					background: '#38343e'
+					background: 'rgba(52, 52, 52, 0.8)'
 				});
 				$tips.css({
-					background: '#38343e'
+					background: 'rgba(52, 52, 52, 0.6)'
 				});
 				$lk.css({
 					background: '#38343e'
