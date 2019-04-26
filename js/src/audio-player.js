@@ -98,7 +98,7 @@ var wenkmList;
 			return ("00" + Math.floor(t / 60)).substr(-2) + ":" + ("00" + Math.floor(t % 60)).substr(-2)
 		}
 		var cicleTime = null;
-		$cover.html('<img src="https://ws3.sinaimg.cn/large/006MOU0zgy1g19n0u9anzj30jg0kbabt.jpg">');
+		$cover.html('<img src="https://avatars2.githubusercontent.com/u/49894775?s=460&v=4">');
 		$songName.html('<a style="color:#f00">\u521d\u59cb\u5316\u5931\u8d25</a>');
 		$songFrom.html('<a href="http://www.52share.online" title="\u5728\u7ebf\u5206\u4eab\u7f51" target="_blank" style="color:#f00">HuiProgramer</a>');
 		$songFrom1.html('<a style="color:#f00">\u97f3\u4e50\u64ad\u653e\u5668</a>');
@@ -184,7 +184,7 @@ var wenkmList;
 					$(".myhk_pjax_loading_frame,.myhk_pjax_loading").hide();
 					wenkmTips.show(wenkmList[albumId].song_name[songId].replace((songId+1)+'#','') + '\u0020\u002d\u0020\u6b4c\u66f2\u0049\u0044\u586b\u5199\u9519\u8bef\uff0c\u81ea\u52a8\u64ad\u653e\u4e0b\u4e00\u66f2\uff01');
 					audio.pause()
-					$cover.html('<img src="https://ws3.sinaimg.cn/large/006MOU0zgy1g19n0u9anzj30jg0kbabt.jpg">');
+					$cover.html('<img src="https://avatars2.githubusercontent.com/u/49894775?s=460&v=4">');
 		$songName.html('<a style="color:#f00">\u6b4c\u66f2\u0049\u0044\u9519\u8bef</a>');
 		$songFrom.html('<a href="http://www.52share.online" title="\u660e\u6708\u6d69\u7a7a" target="_blank" style="color:#f00">HuiProgramer</a>');
 		$songFrom1.html('<a style="color:#f00">\u97f3\u4e50\u64ad\u653e\u5668</a>');
@@ -678,7 +678,7 @@ $.ajax({
 					setTimeout(function() {
 						$(".myhk_pjax_loading_frame,.myhk_pjax_loading").hide();
 					}, 800);
-					coverImg.src = "https://limh.me/content/plugins/Myhk_Player/style/limh.me.jpg";
+					coverImg.src = "https://avatars2.githubusercontent.com/u/49894775?s=460&v=4";
 					setTimeout(function() {
 						wenkmTips.show(wenkmList[albumId].song_name[songId].replace((songId+1)+'#','') + '\u0020\u002d\u0020\u4e13\u8f91\u56fe\u7247\u83b7\u53d6\u5931\u8d25\uff01');
 					}, 4000);
