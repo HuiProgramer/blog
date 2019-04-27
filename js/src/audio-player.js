@@ -3,7 +3,7 @@ console.log("%c3"," text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px
 console.log("%c2"," text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:4em;line-height:60px;");
 console.log("%c1"," text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:2em;line-height:60px;");
 console.log('%c在线分享网欢迎您', 'color: #fff; background: #f40; font-size: 24px;border-radius:0 15px 15px 0;padding:10px;');
-console.log("%c                                           ","background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;-webkit-background-clip: text;font-size:5em;width:1px;height:40px;padding:2px;");
+console.log("%c  ","line-height:60px;");
 console.log("%c", "color:red;font-size:30px;font-weight:bolder;padding:50px 420px;line-height:10px;background:url('https://ws2.sinaimg.cn/large/006MOU0zly1g1ngog19ayg30jg0j6t9e.gif') repeat-x;background-size:contain;");
 console.log("%c  ","line-height:50px;");},5000);
 jQuery.cookie = function(name, value, options) {
