@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://me.obey.fun/Mybatis-%E5%85%A5%E9%97%A8.html</loc>
+    
+    <lastmod>2019-11-06T02:41:38.378Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://me.obey.fun/Hibernate%EF%BC%88%E4%BA%86%E8%A7%A3%E4%B8%8E%E4%BD%BF%E7%94%A8%EF%BC%89.html</loc>
+    
+    <lastmod>2019-10-28T05:44:55.188Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://me.obey.fun/topx/index.html</loc>
     
     <lastmod>2019-10-28T05:28:50.429Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>https://me.obey.fun/Java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE.html</loc>
     
     <lastmod>2019-10-28T05:24:25.422Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://me.obey.fun/Hibernate%EF%BC%88%E4%BA%86%E8%A7%A3%E4%B8%8E%E4%BD%BF%E7%94%A8%EF%BC%89.html</loc>
-    
-    <lastmod>2019-10-28T05:10:02.503Z</lastmod>
     
   </url>
   
@@ -89,13 +96,6 @@
     <loc>https://me.obey.fun/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95.html</loc>
     
     <lastmod>2019-05-04T12:46:36.865Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://me.obey.fun/Mybatis-%E5%85%A5%E9%97%A8.html</loc>
-    
-    <lastmod>2019-05-04T12:46:35.056Z</lastmod>
     
   </url>
   
