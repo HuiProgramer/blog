@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://me.obey.fun/"/>
-  <updated>2020-10-13T12:58:23.806Z</updated>
+  <updated>2020-06-17T02:13:46.000Z</updated>
   <id>https://me.obey.fun/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>RocketMQ高级特性</title>
     <link href="https://me.obey.fun/RocketMQ%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7.html"/>
     <id>https://me.obey.fun/RocketMQ高级特性.html</id>
-    <published>2020-10-13T12:58:23.000Z</published>
-    <updated>2020-10-13T12:58:23.806Z</updated>
+    <published>2020-06-15T12:58:23.000Z</published>
+    <updated>2020-06-17T02:13:46.000Z</updated>
     
     <summary type="html">
     
@@ -29,12 +29,20 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:39:58 GMT+0800 (GMT+08:00) --&gt;&lt;!-- rebuild by neat
+          &lt;!-- build time:Wed Oct 14 2020 21:22:03 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;高级功能&quot;&gt;&lt;a href=&quot;#高级功能&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
+      <category term="MessageQueue" scheme="https://me.obey.fun/categories/MessageQueue/"/>
+    
+      <category term="RocketMQ" scheme="https://me.obey.fun/categories/MessageQueue/RocketMQ/"/>
+    
+    
+      <category term="中间件" scheme="https://me.obey.fun/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
+      <category term="RocketMQ" scheme="https://me.obey.fun/tags/RocketMQ/"/>
     
   </entry>
   
@@ -51,7 +59,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:40:00 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;案例介绍&quot;&gt;&lt;a href=&quot;#案例介绍&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:06 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;案例介绍&quot;&gt;&lt;a href=&quot;#案例介绍&quot; class=&quot;headerlink&quot;
         
       
     
@@ -81,7 +89,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:40:01 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;MQ介绍&quot;&gt;&lt;a href=&quot;#MQ介绍&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:06 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;MQ介绍&quot;&gt;&lt;a href=&quot;#MQ介绍&quot; class=&quot;headerlink&quot;
         
       
     
@@ -111,7 +119,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:40:00 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;mybatis-plus简介：&quot;&gt;&lt;a href=&quot;#mybatis-plus简介：&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:06 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;mybatis-plus简介：&quot;&gt;&lt;a href=&quot;#mybatis-plus简介：&quot; class=&quot;headerlink&quot;
         
       
     
@@ -141,7 +149,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:40:02 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是SpringCloud？&quot;&gt;&lt;a href=&quot;#什么是SpringCloud？&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:07 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是SpringCloud？&quot;&gt;&lt;a href=&quot;#什么是SpringCloud？&quot; class=&quot;headerlink&quot;
         
       
     
@@ -173,7 +181,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:39:58 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Centos的配置&quot;&gt;&lt;a href=&quot;#Centos的配置&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:05 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Centos的配置&quot;&gt;&lt;a href=&quot;#Centos的配置&quot; class=&quot;headerlink&quot;
         
       
     
@@ -203,7 +211,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:40:00 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Linux-入门&quot;&gt;&lt;a href=&quot;#Linux-入门&quot; class=&quot;headerlink&quot; title=&quot;Linux
+          &lt;!-- build time:Wed Oct 14 2020 19:18:05 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Linux-入门&quot;&gt;&lt;a href=&quot;#Linux-入门&quot; class=&quot;headerlink&quot; title=&quot;Linux
         
       
     
@@ -231,7 +239,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:39:59 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;初入Dubbo&quot;&gt;&lt;a href=&quot;#初入Dubbo&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:05 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;初入Dubbo&quot;&gt;&lt;a href=&quot;#初入Dubbo&quot; class=&quot;headerlink&quot;
         
       
     
@@ -261,7 +269,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:40:00 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Maven的使用入门&quot;&gt;&lt;a href=&quot;#Maven的使用入门&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:06 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Maven的使用入门&quot;&gt;&lt;a href=&quot;#Maven的使用入门&quot; class=&quot;headerlink&quot;
         
       
     
@@ -291,7 +299,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:40:03 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Hiberante的了解&quot;&gt;&lt;a href=&quot;#Hiberante的了解&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:07 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Hiberante的了解&quot;&gt;&lt;a href=&quot;#Hiberante的了解&quot; class=&quot;headerlink&quot;
         
       
     
@@ -323,7 +331,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:39:59 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Spring-入门&quot;&gt;&lt;a href=&quot;#Spring-入门&quot; class=&quot;headerlink&quot; title=&quot;Spring
+          &lt;!-- build time:Wed Oct 14 2020 19:18:05 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Spring-入门&quot;&gt;&lt;a href=&quot;#Spring-入门&quot; class=&quot;headerlink&quot; title=&quot;Spring
         
       
     
@@ -355,7 +363,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:39:59 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是BootStrap&quot;&gt;&lt;a href=&quot;#什么是BootStrap&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:05 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是BootStrap&quot;&gt;&lt;a href=&quot;#什么是BootStrap&quot; class=&quot;headerlink&quot;
         
       
     
@@ -387,7 +395,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:39:59 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是JQuery&quot;&gt;&lt;a href=&quot;#什么是JQuery&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:05 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是JQuery&quot;&gt;&lt;a href=&quot;#什么是JQuery&quot; class=&quot;headerlink&quot;
         
       
     
@@ -419,7 +427,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:40:02 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Mybatis入门&quot;&gt;&lt;a href=&quot;#Mybatis入门&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:06 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Mybatis入门&quot;&gt;&lt;a href=&quot;#Mybatis入门&quot; class=&quot;headerlink&quot;
         
       
     
@@ -451,7 +459,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:39:59 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;AOP-前奏&quot;&gt;&lt;a href=&quot;#AOP-前奏&quot; class=&quot;headerlink&quot; title=&quot;AOP
+          &lt;!-- build time:Wed Oct 14 2020 19:18:05 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;AOP-前奏&quot;&gt;&lt;a href=&quot;#AOP-前奏&quot; class=&quot;headerlink&quot; title=&quot;AOP
         
       
     
@@ -485,7 +493,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:39:59 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;通过调用静态工厂方法创建Bean&quot;&gt;&lt;a href=&quot;#通过调用静态工厂方法创建Bean&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:05 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;通过调用静态工厂方法创建Bean&quot;&gt;&lt;a href=&quot;#通过调用静态工厂方法创建Bean&quot; class=&quot;headerlink&quot;
         
       
     
@@ -517,7 +525,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:39:58 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;JavaConfig&quot;&gt;&lt;a href=&quot;#JavaConfig&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:05 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;JavaConfig&quot;&gt;&lt;a href=&quot;#JavaConfig&quot; class=&quot;headerlink&quot;
         
       
     
@@ -551,7 +559,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:39:59 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;IOC容器中Bean的生命周期方法&quot;&gt;&lt;a href=&quot;#IOC容器中Bean的生命周期方法&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:05 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;IOC容器中Bean的生命周期方法&quot;&gt;&lt;a href=&quot;#IOC容器中Bean的生命周期方法&quot; class=&quot;headerlink&quot;
         
       
     
@@ -583,7 +591,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:39:58 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Spring表达式语言：SpEL&quot;&gt;&lt;a href=&quot;#Spring表达式语言：SpEL&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:05 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Spring表达式语言：SpEL&quot;&gt;&lt;a href=&quot;#Spring表达式语言：SpEL&quot; class=&quot;headerlink&quot;
         
       
     
@@ -615,7 +623,7 @@
       
         
         
-          &lt;!-- build time:Tue Oct 13 2020 21:39:57 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;使用外部属性&quot;&gt;&lt;a href=&quot;#使用外部属性&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Oct 14 2020 19:18:04 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;使用外部属性&quot;&gt;&lt;a href=&quot;#使用外部属性&quot; class=&quot;headerlink&quot;
         
       
     
