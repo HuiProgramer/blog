@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://me.obey.fun/"/>
-  <updated>2020-12-22T12:26:59.332Z</updated>
+  <updated>2021-03-05T15:45:35.639Z</updated>
   <id>https://me.obey.fun/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>持续集成及Jenkins详解</title>
+    <link href="https://me.obey.fun/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%8F%8AJenkins%E8%AF%A6%E8%A7%A3.html"/>
+    <id>https://me.obey.fun/持续集成及Jenkins详解.html</id>
+    <published>2021-03-05T14:19:10.000Z</published>
+    <updated>2021-03-05T15:45:35.639Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!-- build time:Fri Mar 05 2021 23:46:39 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;持续集成及Jenkins介绍&quot;&gt;&lt;a href=&quot;#持续集成及Jenkins介绍&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="CI/CD" scheme="https://me.obey.fun/categories/CI-CD/"/>
+    
+      <category term="Java" scheme="https://me.obey.fun/categories/CI-CD/Java/"/>
+    
+    
+      <category term="Jenkins" scheme="https://me.obey.fun/tags/Jenkins/"/>
+    
+      <category term="持续集成/持续部署" scheme="https://me.obey.fun/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90-%E6%8C%81%E7%BB%AD%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
   
   <entry>
     <title>JVM探究</title>
@@ -29,7 +59,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:36 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;面试常见：&quot;&gt;&lt;a href=&quot;#面试常见：&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;面试常见：&quot;&gt;&lt;a href=&quot;#面试常见：&quot; class=&quot;headerlink&quot;
         
       
     
@@ -59,7 +89,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:36 GMT+0800 (GMT+08:00) --&gt;&lt;blockquote class=&quot;note success&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;blockquote class=&quot;note success&quot;
         
       
     
@@ -89,7 +119,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:37 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Docker&quot;&gt;&lt;a href=&quot;#Docker&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:53 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Docker&quot;&gt;&lt;a href=&quot;#Docker&quot; class=&quot;headerlink&quot;
         
       
     
@@ -119,7 +149,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:39 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;高级功能&quot;&gt;&lt;a href=&quot;#高级功能&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:55 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;高级功能&quot;&gt;&lt;a href=&quot;#高级功能&quot; class=&quot;headerlink&quot;
         
       
     
@@ -149,7 +179,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:37 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;案例介绍&quot;&gt;&lt;a href=&quot;#案例介绍&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:53 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;案例介绍&quot;&gt;&lt;a href=&quot;#案例介绍&quot; class=&quot;headerlink&quot;
         
       
     
@@ -179,7 +209,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:38 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;MQ介绍&quot;&gt;&lt;a href=&quot;#MQ介绍&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:54 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;MQ介绍&quot;&gt;&lt;a href=&quot;#MQ介绍&quot; class=&quot;headerlink&quot;
         
       
     
@@ -209,7 +239,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:37 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;mybatis-plus简介：&quot;&gt;&lt;a href=&quot;#mybatis-plus简介：&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:53 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;mybatis-plus简介：&quot;&gt;&lt;a href=&quot;#mybatis-plus简介：&quot; class=&quot;headerlink&quot;
         
       
     
@@ -239,7 +269,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:38 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是SpringCloud？&quot;&gt;&lt;a href=&quot;#什么是SpringCloud？&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:54 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是SpringCloud？&quot;&gt;&lt;a href=&quot;#什么是SpringCloud？&quot; class=&quot;headerlink&quot;
         
       
     
@@ -271,7 +301,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:36 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;ElasticSearch7-6-x&quot;&gt;&lt;a href=&quot;#ElasticSearch7-6-x&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;ElasticSearch7-6-x&quot;&gt;&lt;a href=&quot;#ElasticSearch7-6-x&quot;
         
       
     
@@ -301,7 +331,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:37 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Spring-Security-快速上手&quot;&gt;&lt;a href=&quot;#Spring-Security-快速上手&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:53 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Spring-Security-快速上手&quot;&gt;&lt;a href=&quot;#Spring-Security-快速上手&quot;
         
       
     
@@ -331,7 +361,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:36 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Centos的配置&quot;&gt;&lt;a href=&quot;#Centos的配置&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Centos的配置&quot;&gt;&lt;a href=&quot;#Centos的配置&quot; class=&quot;headerlink&quot;
         
       
     
@@ -361,7 +391,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:37 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Linux-入门&quot;&gt;&lt;a href=&quot;#Linux-入门&quot; class=&quot;headerlink&quot; title=&quot;Linux
+          &lt;!-- build time:Fri Mar 05 2021 23:30:53 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Linux-入门&quot;&gt;&lt;a href=&quot;#Linux-入门&quot; class=&quot;headerlink&quot; title=&quot;Linux
         
       
     
@@ -389,7 +419,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:36 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot;
         
       
     
@@ -419,7 +449,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:36 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;初入Dubbo&quot;&gt;&lt;a href=&quot;#初入Dubbo&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;初入Dubbo&quot;&gt;&lt;a href=&quot;#初入Dubbo&quot; class=&quot;headerlink&quot;
         
       
     
@@ -449,7 +479,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:37 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Maven的使用入门&quot;&gt;&lt;a href=&quot;#Maven的使用入门&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:53 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Maven的使用入门&quot;&gt;&lt;a href=&quot;#Maven的使用入门&quot; class=&quot;headerlink&quot;
         
       
     
@@ -479,7 +509,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:38 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Hiberante的了解&quot;&gt;&lt;a href=&quot;#Hiberante的了解&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:54 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Hiberante的了解&quot;&gt;&lt;a href=&quot;#Hiberante的了解&quot; class=&quot;headerlink&quot;
         
       
     
@@ -511,7 +541,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:36 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Spring-入门&quot;&gt;&lt;a href=&quot;#Spring-入门&quot; class=&quot;headerlink&quot; title=&quot;Spring
+          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Spring-入门&quot;&gt;&lt;a href=&quot;#Spring-入门&quot; class=&quot;headerlink&quot; title=&quot;Spring
         
       
     
@@ -543,7 +573,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:36 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是BootStrap&quot;&gt;&lt;a href=&quot;#什么是BootStrap&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是BootStrap&quot;&gt;&lt;a href=&quot;#什么是BootStrap&quot; class=&quot;headerlink&quot;
         
       
     
@@ -575,7 +605,7 @@
       
         
         
-          &lt;!-- build time:Tue Dec 22 2020 20:27:36 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是JQuery&quot;&gt;&lt;a href=&quot;#什么是JQuery&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是JQuery&quot;&gt;&lt;a href=&quot;#什么是JQuery&quot; class=&quot;headerlink&quot;
         
       
     
@@ -591,38 +621,6 @@
       <category term="前端框架" scheme="https://me.obey.fun/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
     
       <category term="JQuery" scheme="https://me.obey.fun/tags/JQuery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mybatis教程（简单入门）</title>
-    <link href="https://me.obey.fun/Mybatis-%E5%85%A5%E9%97%A8.html"/>
-    <id>https://me.obey.fun/Mybatis-入门.html</id>
-    <published>2019-03-26T07:53:07.000Z</published>
-    <updated>2019-11-06T02:41:38.378Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;!-- build time:Tue Dec 22 2020 20:27:38 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Mybatis入门&quot;&gt;&lt;a href=&quot;#Mybatis入门&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="后端" scheme="https://me.obey.fun/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-      <category term="Java" scheme="https://me.obey.fun/categories/%E5%90%8E%E7%AB%AF/Java/"/>
-    
-      <category term="Mybatis" scheme="https://me.obey.fun/categories/%E5%90%8E%E7%AB%AF/Java/Mybatis/"/>
-    
-    
-      <category term="SSM" scheme="https://me.obey.fun/tags/SSM/"/>
-    
-      <category term="SQL" scheme="https://me.obey.fun/tags/SQL/"/>
     
   </entry>
   
