@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://me.obey.fun/"/>
-  <updated>2021-03-05T15:45:35.639Z</updated>
+  <updated>2021-03-17T11:34:30.322Z</updated>
   <id>https://me.obey.fun/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Activiti7工作流详解</title>
+    <link href="https://me.obey.fun/Activiti7%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%AF%A6%E8%A7%A3.html"/>
+    <id>https://me.obey.fun/Activiti7工作流详解.html</id>
+    <published>2021-03-17T09:16:26.000Z</published>
+    <updated>2021-03-17T11:34:30.322Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!-- build time:Wed Mar 17 2021 19:35:51 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;工作流介绍&quot;&gt;&lt;a href=&quot;#工作流介绍&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="工作流框架" scheme="https://me.obey.fun/categories/%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="Activiti7" scheme="https://me.obey.fun/categories/%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%A1%86%E6%9E%B6/Activiti7/"/>
+    
+    
+      <category term="BPMN" scheme="https://me.obey.fun/tags/BPMN/"/>
+    
+      <category term="Activiti" scheme="https://me.obey.fun/tags/Activiti/"/>
+    
+  </entry>
   
   <entry>
     <title>持续集成及Jenkins详解</title>
@@ -29,7 +59,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:46:39 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;持续集成及Jenkins介绍&quot;&gt;&lt;a href=&quot;#持续集成及Jenkins介绍&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:33 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;持续集成及Jenkins介绍&quot;&gt;&lt;a href=&quot;#持续集成及Jenkins介绍&quot; class=&quot;headerlink&quot;
         
       
     
@@ -59,7 +89,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;面试常见：&quot;&gt;&lt;a href=&quot;#面试常见：&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:21 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;面试常见：&quot;&gt;&lt;a href=&quot;#面试常见：&quot; class=&quot;headerlink&quot;
         
       
     
@@ -89,7 +119,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;blockquote class=&quot;note success&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:22 GMT+0800 (GMT+08:00) --&gt;&lt;blockquote class=&quot;note success&quot;
         
       
     
@@ -119,7 +149,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:53 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Docker&quot;&gt;&lt;a href=&quot;#Docker&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:26 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Docker&quot;&gt;&lt;a href=&quot;#Docker&quot; class=&quot;headerlink&quot;
         
       
     
@@ -149,7 +179,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:55 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;高级功能&quot;&gt;&lt;a href=&quot;#高级功能&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:36 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;高级功能&quot;&gt;&lt;a href=&quot;#高级功能&quot; class=&quot;headerlink&quot;
         
       
     
@@ -179,7 +209,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:53 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;案例介绍&quot;&gt;&lt;a href=&quot;#案例介绍&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:25 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;案例介绍&quot;&gt;&lt;a href=&quot;#案例介绍&quot; class=&quot;headerlink&quot;
         
       
     
@@ -209,7 +239,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:54 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;MQ介绍&quot;&gt;&lt;a href=&quot;#MQ介绍&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:28 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;MQ介绍&quot;&gt;&lt;a href=&quot;#MQ介绍&quot; class=&quot;headerlink&quot;
         
       
     
@@ -239,7 +269,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:53 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;mybatis-plus简介：&quot;&gt;&lt;a href=&quot;#mybatis-plus简介：&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:24 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;mybatis-plus简介：&quot;&gt;&lt;a href=&quot;#mybatis-plus简介：&quot; class=&quot;headerlink&quot;
         
       
     
@@ -269,7 +299,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:54 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是SpringCloud？&quot;&gt;&lt;a href=&quot;#什么是SpringCloud？&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:30 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是SpringCloud？&quot;&gt;&lt;a href=&quot;#什么是SpringCloud？&quot; class=&quot;headerlink&quot;
         
       
     
@@ -301,7 +331,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;ElasticSearch7-6-x&quot;&gt;&lt;a href=&quot;#ElasticSearch7-6-x&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:21 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;ElasticSearch7-6-x&quot;&gt;&lt;a href=&quot;#ElasticSearch7-6-x&quot;
         
       
     
@@ -331,7 +361,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:53 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Spring-Security-快速上手&quot;&gt;&lt;a href=&quot;#Spring-Security-快速上手&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:26 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Spring-Security-快速上手&quot;&gt;&lt;a href=&quot;#Spring-Security-快速上手&quot;
         
       
     
@@ -361,7 +391,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Centos的配置&quot;&gt;&lt;a href=&quot;#Centos的配置&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:19 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Centos的配置&quot;&gt;&lt;a href=&quot;#Centos的配置&quot; class=&quot;headerlink&quot;
         
       
     
@@ -391,7 +421,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:53 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Linux-入门&quot;&gt;&lt;a href=&quot;#Linux-入门&quot; class=&quot;headerlink&quot; title=&quot;Linux
+          &lt;!-- build time:Wed Mar 17 2021 19:16:24 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Linux-入门&quot;&gt;&lt;a href=&quot;#Linux-入门&quot; class=&quot;headerlink&quot; title=&quot;Linux
         
       
     
@@ -419,7 +449,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:23 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot;
         
       
     
@@ -449,7 +479,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;初入Dubbo&quot;&gt;&lt;a href=&quot;#初入Dubbo&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:22 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;初入Dubbo&quot;&gt;&lt;a href=&quot;#初入Dubbo&quot; class=&quot;headerlink&quot;
         
       
     
@@ -479,7 +509,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:53 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Maven的使用入门&quot;&gt;&lt;a href=&quot;#Maven的使用入门&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:25 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Maven的使用入门&quot;&gt;&lt;a href=&quot;#Maven的使用入门&quot; class=&quot;headerlink&quot;
         
       
     
@@ -509,7 +539,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:54 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Hiberante的了解&quot;&gt;&lt;a href=&quot;#Hiberante的了解&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:32 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Hiberante的了解&quot;&gt;&lt;a href=&quot;#Hiberante的了解&quot; class=&quot;headerlink&quot;
         
       
     
@@ -541,7 +571,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Spring-入门&quot;&gt;&lt;a href=&quot;#Spring-入门&quot; class=&quot;headerlink&quot; title=&quot;Spring
+          &lt;!-- build time:Wed Mar 17 2021 19:16:23 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Spring-入门&quot;&gt;&lt;a href=&quot;#Spring-入门&quot; class=&quot;headerlink&quot; title=&quot;Spring
         
       
     
@@ -573,7 +603,7 @@
       
         
         
-          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是BootStrap&quot;&gt;&lt;a href=&quot;#什么是BootStrap&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Wed Mar 17 2021 19:16:21 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是BootStrap&quot;&gt;&lt;a href=&quot;#什么是BootStrap&quot; class=&quot;headerlink&quot;
         
       
     
@@ -589,38 +619,6 @@
       <category term="BootStrap" scheme="https://me.obey.fun/tags/BootStrap/"/>
     
       <category term="前端框架" scheme="https://me.obey.fun/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jquery入门</title>
-    <link href="https://me.obey.fun/JQuery%E5%85%A5%E9%97%A8.html"/>
-    <id>https://me.obey.fun/JQuery入门.html</id>
-    <published>2019-04-21T08:50:04.000Z</published>
-    <updated>2019-04-26T01:09:20.951Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;!-- build time:Fri Mar 05 2021 23:30:52 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;什么是JQuery&quot;&gt;&lt;a href=&quot;#什么是JQuery&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="https://me.obey.fun/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="JavaScript" scheme="https://me.obey.fun/categories/%E5%89%8D%E7%AB%AF/JavaScript/"/>
-    
-      <category term="JQuery" scheme="https://me.obey.fun/categories/%E5%89%8D%E7%AB%AF/JavaScript/JQuery/"/>
-    
-    
-      <category term="前端框架" scheme="https://me.obey.fun/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="JQuery" scheme="https://me.obey.fun/tags/JQuery/"/>
     
   </entry>
   
