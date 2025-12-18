@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>珠海长隆2天1夜亲子游攻略（迎海版）</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 FontAwesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基础样式 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f9ff;
+            color: #334155;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .card-shadow { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
+        .gradient-bg { background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        
+        /* 导航激活状态 */
+        .nav-item.active {
+            color: #0ea5e9;
+            font-weight: bold;
+            border-bottom: 2px solid #0ea5e9;
+        }
+
+        /* 天数切换按钮激活 */
+        .day-btn.active {
+            background-color: #3b82f6;
+            color: white;
+            font-weight: bold;
+        }
+        .day-btn {
+            background-color: #e2e8f0;
+            color: #64748b;
+        }
+
+        /* 时间轴线 */
+        .timeline-line {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #cbd5e1;
+            z-index: 0;
+        }
+
+        /* 地图样式 */
+        .map-container {
+            position: relative;
+            background-color: #e6f7ff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid #bae6fd;
+        }
+        
+        .map-point {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .map-point.highlighted {
+            z-index: 30;
+            transform: translate(-50%, -70%) scale(1.4);
+            filter: drop-shadow(0 0 8px rgba(255, 255, 0, 0.8));
+        }
+        .map-point.highlighted i {
+            animation: bounce-fast 0.5s infinite alternate;
+        }
+        @keyframes bounce-fast {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); }
+        }
+
+        .card-item.selected-card {
+            border-color: #3b82f6;
+            background-color: #eff6ff;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+        }
+
+        .fade-in { animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-bounce-slow { animation: bounce 2s infinite; }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-5%); }
+            50% { transform: translateY(5%); }
+        }
+
+        .tag {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+        .tag-blue { background-color: #dbeafe; color: #1e40af; }
+        .tag-red { background-color: #fee2e2; color: #991b1b; }
+        .tag-green { background-color: #dcfce7; color: #166534; }
+        .tag-purple { background-color: #f3e8ff; color: #6b21a8; }
+    </style>
+</head>
+<body class="pb-24">
+
+    <!-- 顶部导航 -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+        <div class="flex justify-between items-center px-4 py-3">
+            <h1 class="text-lg font-bold text-slate-800">🌊 珠海长隆攻略Plus</h1>
+            <div class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full font-medium">
+                5岁女宝定制
+            </div>
+        </div>
+        <div class="flex justify-around text-sm border-t border-slate-100">
+            <button onclick="switchTab('prep')" class="nav-item py-3 flex-1 text-center text-slate-500 active" id="btn-prep">准备&避坑</button>
+            <button onclick="switchTab('timeline')" class="nav-item py-3 flex-1 text-center text-slate-500" id="btn-timeline">全景行程</button>
+            <button onclick="switchTab('cards')" class="nav-item py-3 flex-1 text-center text-slate-500" id="btn-cards">集卡寻宝</button>
+        </div>
+    </header>
+
+    <!-- 内容区域 -->
+    <main class="pt-28 px-4 max-w-2xl mx-auto space-y-6">
+
+        <!-- 1. 准备 & 避坑 (合并) -->
+        <section id="tab-prep" class="space-y-4">
+            <!-- 酒店 -->
+            <div class="bg-white rounded-xl card-shadow p-5 border-l-4 border-yellow-400">
+                <h2 class="text-lg font-bold mb-3 flex items-center">
+                    <i class="fa-solid fa-hotel text-yellow-500 mr-2"></i> 迎海公寓入住
+                </h2>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 mt-1 mr-2"></i> <span><strong>停车/取票：</strong> 免费停车。大堂办理入住时录指纹拿票。</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-bus text-blue-500 mt-1 mr-2"></i> <span><strong>穿梭巴士：</strong> 约15-30分钟一班。建议8:30前去排队，赶第一波入园。</span></li>
+                </ul>
+            </div>
+            
+            <!-- 清单 -->
+            <div class="bg-white rounded-xl card-shadow p-5">
+                <h2 class="text-lg font-bold mb-3 flex items-center"><i class="fa-solid fa-suitcase text-blue-500 mr-2"></i> 必带神器</h2>
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                    <div class="bg-orange-50 p-3 rounded-lg">
+                        <h3 class="font-bold text-orange-700 mb-1">🎒 宝宝包</h3>
+                        <p class="text-xs text-slate-600">雨衣(提前买!)、厚外套(极地馆冷)、舒适鞋、保温杯、零食。</p>
+                    </div>
+                    <div class="bg-blue-50 p-3 rounded-lg">
+                        <h3 class="font-bold text-blue-700 mb-1">📱 家长备</h3>
+                        <p class="text-xs text-slate-600">充电宝、关注"长隆旅游"小程序看实时时间表。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 避坑指南 -->
+            <div class="bg-red-50 p-4 rounded-xl border border-red-100 shadow-sm">
+                <h3 class="font-bold text-red-600 mb-2"><i class="fa-solid fa-triangle-exclamation"></i> 避坑指南</h3>
+                <ul class="text-sm space-y-2 text-slate-700">
+                    <li><strong>🌧️ 雨衣省钱：</strong> 园内40元/件。提前网购！冰山过山车/超级激流/旋转水战/激浪帆船都要用。</li>
+                    <li><strong>🍽️ 吃饭攻略：</strong> 园内餐厅推荐“雨林餐厅”(东南亚菜)相对好吃。</li>
+                    <li><strong>🧥 极冷预警：</strong> 企鹅馆和北极熊馆非常冷，夏天也要带外套！</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 2. 全景行程 (Timeline) -->
+        <section id="tab-timeline" class="hidden space-y-4">
+            
+            <!-- Day 1 / Day 2 切换 -->
+            <div class="flex p-1 bg-slate-100 rounded-lg mb-4">
+                <button onclick="switchDay('day1')" class="day-btn active flex-1 py-2 rounded-md text-sm transition-all" id="btn-day1">Day 1: 冲锋 & 打卡</button>
+                <button onclick="switchDay('day2')" class="day-btn flex-1 py-2 rounded-md text-sm transition-all" id="btn-day2">Day 2: 挑战 & 二刷</button>
+            </div>
+
+            <!-- 模式筛选 (仅在 Day 1 显示) -->
+            <div id="mode-selector" class="sticky top-24 z-40 bg-white/90 backdrop-blur p-2 rounded-xl shadow-md mx-auto flex gap-1 mb-4 border border-slate-100">
+                <button onclick="setMode('play')" class="flex-1 py-2 px-1 rounded-lg text-[11px] font-bold transition-all bg-green-100 text-green-700" id="mode-play">
+                    <i class="fa-solid fa-child mb-1 block text-sm"></i>亲子游乐
+                </button>
+                <button onclick="setMode('game')" class="flex-1 py-2 px-1 rounded-lg text-[11px] font-medium text-slate-500 transition-all" id="mode-game">
+                    <i class="fa-solid fa-gamepad mb-1 block text-sm"></i>全员挑战
+                </button>
+                <button onclick="setMode('show')" class="flex-1 py-2 px-1 rounded-lg text-[11px] font-medium text-slate-500 transition-all" id="mode-show">
+                    <i class="fa-solid fa-clapperboard mb-1 block text-sm"></i>必看演出
+                </button>
+            </div>
+
+            <!-- 父母轮换子开关 -->
+            <div id="sub-mode-control" class="hidden mx-auto max-w-xs mb-4 bg-red-50 p-3 rounded-lg border border-red-100">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-red-700 mr-2"><i class="fa-solid fa-users-gear"></i> 父母轮换模式</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="swap-toggle" class="sr-only peer" onchange="toggleSwapMode()">
+                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-red-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                    </label>
+                </div>
+            </div>
+
+            <p class="text-center text-xs text-slate-400 mb-2" id="mode-desc">正在显示：Day 1 适合5岁宝宝的轻松路线</p>
+
+            <!-- Day 1 时间轴 -->
+            <div id="timeline-day1" class="relative pl-6 pt-2 pb-10 space-y-8">
+                <div class="timeline-line"></div>
+                <!-- 09:00 -->
+                <div class="relative z-10 timeline-item" data-type="all">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-blue-600 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-blue-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold text-blue-700">09:00 - 入园冲锋</span>
+                            <span class="tag tag-blue">必做</span>
+                        </div>
+                        <div class="text-sm text-slate-600">入园后不要拍照，直奔右侧海豚湾/雨林区！</div>
+                    </div>
+                </div>
+
+                <!-- 09:30 成人 - 鹦鹉过山车 -->
+                <div class="relative z-10 timeline-item hidden fade-in" data-type="swap-only">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-red-600 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-red-600">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold text-red-700">09:30 - 鹦鹉过山车</span>
+                            <span class="tag tag-red">1.32m+</span>
+                        </div>
+                        <div class="bg-red-50 p-2 rounded text-xs text-red-800"><strong>👨‍👩‍👧 轮换：</strong> 爸爸先排队，妈妈带娃玩对面的【海豚转转车】。</div>
+                    </div>
+                </div>
+
+                <!-- 10:00 全员挑战 - 雨林飞翔 -->
+                <div class="relative z-10 timeline-item hidden fade-in" data-type="game">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-orange-500 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-orange-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold text-slate-800">10:00 - 雨林飞翔区</span>
+                            <span class="tag tag-red">刺激</span>
+                        </div>
+                        <p class="text-sm text-slate-600">
+                            <strong>雨林升降塔</strong>：有高低两座，体验失重感。(1.2m+/1m+)<br>
+                            <strong>丛林攀爬</strong>：绳索探险，适合大孩子。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 10:30 亲子 - 海豚湾 -->
+                <div class="relative z-10 timeline-item fade-in" data-type="play">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-green-500 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-green-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold text-slate-800">10:30 - 海豚湾 & 梦幻海洋</span>
+                            <span class="tag tag-green">温和</span>
+                        </div>
+                        <ul class="list-disc list-inside text-sm text-slate-600">
+                            <li><strong>梦幻海洋</strong>：门口的旋转木马，拍照好看。</li>
+                            <li><strong>5D城堡影院</strong>：30分钟一场。</li>
+                            <li><strong>海豚转转车</strong>：水上木马。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 10:30 挑战 - 旋转水战 -->
+                <div class="relative z-10 timeline-item hidden fade-in" data-type="game">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-orange-500 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-orange-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold text-slate-800">10:30 - 旋转水战</span>
+                            <span class="tag tag-red">必湿身</span>
+                        </div>
+                        <p class="text-sm text-slate-600">全家穿雨衣上阵！0.9m以上可玩。</p>
+                    </div>
+                </div>
+
+                <!-- 11:30 通用 - 鲸鲨馆 -->
+                <div class="relative z-10 timeline-item" data-type="all">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-cyan-500 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-cyan-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold text-slate-800">11:30 - 鲸鲨馆</span>
+                            <span class="tag tag-blue">必看</span>
+                        </div>
+                        <p class="text-sm text-slate-600">
+                            全球最大水族箱。
+                            <br><strong class="text-blue-600">必玩推荐：</strong>海底互动船（就在馆内，坐船看鱼，0.9m+）。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 12:30 海狮剧场 -->
+                <div class="relative z-10 timeline-item hidden fade-in" data-type="show">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-purple-500 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-purple-400">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold text-slate-800">12:30 - 海狮剧场</span>
+                            <span class="tag tag-purple">演出</span>
+                        </div>
+                        <p class="text-sm text-slate-600">搞笑表演，孩子最爱。</p>
+                    </div>
+                </div>
+
+                <!-- 13:00 挑战 - 激浪帆船 -->
+                <div class="relative z-10 timeline-item hidden fade-in" data-type="game">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-orange-500 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-orange-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold text-slate-800">13:00 - 激浪帆船</span>
+                            <span class="tag tag-red">晕眩预警</span>
+                        </div>
+                        <p class="text-sm text-slate-600">海象山区域。会旋转的海盗船 (1m+)。</p>
+                    </div>
+                </div>
+
+                <!-- 13:30 海豚剧场 -->
+                <div class="relative z-10 timeline-item hidden fade-in" data-type="show">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-pink-500 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-pink-400">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold text-slate-800">13:30 - 海豚剧场</span>
+                            <span class="tag tag-purple">必看</span>
+                        </div>
+                        <p class="text-sm text-slate-600">海豚跳跃，精彩互动。</p>
+                    </div>
+                </div>
+
+                <!-- 13:30 冰山过山车 (成人) -->
+                <div class="relative z-10 timeline-item hidden fade-in" data-type="swap-only">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-red-600 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-red-600">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold text-red-700">13:30 - 冰山过山车</span>
+                            <span class="tag tag-red">1.2m+</span>
+                        </div>
+                        <div class="bg-red-50 p-2 rounded text-xs text-red-800"><strong>👨‍👩‍👧 轮换：</strong> 在北极熊馆旁。妈妈去玩，爸爸带娃看熊。</div>
+                    </div>
+                </div>
+
+                <!-- 13:30 超级激流 (成人) -->
+                <div class="relative z-10 timeline-item hidden fade-in" data-type="swap-only">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-red-600 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-red-600">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold text-red-700">13:30 - 超级激流</span>
+                            <span class="tag tag-red">1.2m+</span>
+                        </div>
+                        <div class="bg-red-50 p-2 rounded text-xs text-red-800"><strong>👨‍👩‍👧 轮换：</strong> 海象山。爸爸去玩，妈妈带娃看海鸟。</div>
+                    </div>
+                </div>
+
+                <!-- 14:00 英雄岛 -->
+                <div class="relative z-10 timeline-item fade-in" data-type="play">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-green-500 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-green-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold text-slate-800">14:00 - 英雄岛放电</span>
+                            <span class="tag tag-green">儿童区</span>
+                        </div>
+                        <p class="text-sm text-slate-600">
+                            <strong>企鹅过山车</strong> (1m+)、<strong>碰碰车</strong> (碰碰乐)。<br>
+                            这里可以玩很久，设施都适合小朋友。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 15:00 巡游 -->
+                <div class="relative z-10 timeline-item hidden fade-in" data-type="show">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-purple-500 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-purple-400">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold text-purple-700">15:00 - 海洋大巡游</span>
+                            <span class="tag tag-purple">巡游</span>
+                        </div>
+                        <p class="text-sm text-slate-600">横琴海旁找阴凉处。</p>
+                    </div>
+                </div>
+
+                <!-- 16:00 极地馆 -->
+                <div class="relative z-10 timeline-item" data-type="all">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-cyan-600 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-cyan-600">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold text-slate-800">16:00 - 极地馆避暑</span>
+                            <span class="tag tag-blue">室内</span>
+                        </div>
+                        <p class="text-sm text-slate-600">
+                            白鲸剧场(约16:30)、企鹅馆、北极熊馆。<br>
+                            <strong>推荐：</strong> 极地转转杯(转转乐, 1m+)，如果不晕可以玩。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 19:15 夜场 -->
+                <div class="relative z-10 timeline-item" data-type="all">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-indigo-600 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow gradient-bg text-white">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-lg font-bold">19:15 - 夜光巡游 & 烟花</span>
+                            <i class="fa-solid fa-star text-yellow-300"></i>
+                        </div>
+                        <p class="text-xs opacity-90">20:00 海洋保卫战。最佳位置：鲸鲨馆对面。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 时间轴 (丰富版) -->
+            <div id="timeline-day2" class="relative pl-6 pt-2 pb-10 space-y-8 hidden">
+                <div class="timeline-line"></div>
+                
+                <!-- 09:30 -->
+                <div class="relative z-10">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-yellow-500 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-yellow-500">
+                        <h3 class="font-bold text-slate-800">09:30 - 挑战 & 补漏</h3>
+                        <div class="text-sm text-slate-600 mt-1">
+                            <p><strong>进门直冲：雨林飞翔区</strong></p>
+                            <ul class="list-disc list-inside mt-1">
+                                <li>昨晚没玩够的<strong>雨林升降塔</strong>。</li>
+                                <li>如果孩子敢玩，二刷<strong>企鹅过山车</strong>(英雄岛)。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11:00 -->
+                <div class="relative z-10">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-green-500 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-green-500">
+                        <h3 class="font-bold text-slate-800">11:00 - 海象山深度游</h3>
+                        <div class="text-sm text-slate-600 mt-1">
+                            <p>第一天可能匆忙略过，今天慢慢玩：</p>
+                            <ul class="list-disc list-inside mt-1">
+                                <li><strong>激浪帆船</strong> (1m+)。</li>
+                                <li><strong>海鸟世界</strong>：看火烈鸟、喂海龟、看水豚。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13:00 -->
+                <div class="relative z-10">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-pink-500 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-pink-500">
+                        <h3 class="font-bold text-slate-800">13:00 - 集卡 & 购物</h3>
+                        <p class="text-sm text-slate-600 mt-1">完成最后几个集卡任务，去海洋商店兑换礼物。可以在“海洋大街”慢慢逛商店，买纪念品。</p>
+                    </div>
+                </div>
+
+                <!-- 15:00 -->
+                <div class="relative z-10">
+                    <div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-slate-500 border-2 border-white shadow"></div>
+                    <div class="bg-white p-4 rounded-xl card-shadow border-t-4 border-slate-500">
+                        <h3 class="font-bold text-slate-800">15:00 - 快乐返程</h3>
+                        <p class="text-sm text-slate-600 mt-1">坐穿梭巴士回迎海酒店取车，避开周日晚高峰。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 集卡寻宝 -->
+        <section id="tab-cards" class="hidden space-y-4">
+            <div class="bg-white rounded-xl shadow-sm border border-orange-100 p-3 flex items-center justify-between">
+                <div>
+                    <h3 class="text-sm font-bold text-orange-600">🏆 兑换处：游客中心/海洋商店</h3>
+                    <p class="text-[10px] text-slate-500">14张换拼图/徽章，15张(含隐藏)换大奖</p>
+                </div>
+                <div class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold">去兑换 ></div>
+            </div>
+
+            <div class="relative">
+                <div class="relative bg-yellow-50 border-2 border-yellow-200 rounded-t-2xl overflow-hidden h-56 shadow-inner" id="card-map-container">
+                     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fbbf24 2px, transparent 2px); background-size: 20px 20px;"></div>
+                     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-blue-100 rounded-full opacity-60 flex items-center justify-center text-[10px] font-bold text-blue-400">横琴海</div>
+                     <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-[10px] text-slate-400 font-bold">入口方向</div>
+                </div>
+                <div id="selected-card-info" class="bg-white border-x-2 border-b-2 border-yellow-200 rounded-b-2xl p-4 shadow-lg min-h-[100px] transition-all">
+                    <div class="flex items-center text-slate-400 justify-center h-full">
+                        <i class="fa-solid fa-hand-pointer mr-2 animate-bounce"></i>
+                        <span class="text-sm">点击下方卡片，查看获取攻略</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-bold text-slate-700 px-2 mt-2 flex justify-between items-center">
+                <span>全部卡片 (点击即看攻略)</span>
+                <span class="text-[10px] bg-pink-100 text-pink-600 px-2 py-0.5 rounded-full">隐藏款在最后</span>
+            </h3>
+            <div class="grid grid-cols-4 gap-2 pb-10" id="card-grid"></div>
+        </section>
+
+    </main>
+
+    <script>
+        let currentMode = 'play';
+        let selectedCardName = null;
+        
+        // 卡片数据
+        const cardData = {
+            '卡卡': { color: 'yellow', icon: 'fa-paw', location: '入园大门口', top: '90%', left: '50%', question: '长隆吉祥物叫什么?', answer: '卡卡 (Kaka)' },
+            '嬷嬷': { color: 'orange', icon: 'fa-utensils', location: '海洋大街', top: '82%', left: '50%', question: '嬷嬷是什么动物?', answer: '老虎' },
+            '鲸鲨王': { color: 'blue', icon: 'fa-fish', location: '鲸鲨馆', top: '10%', left: '50%', question: '鲸鲨是鲸还是鱼?', answer: '最大的鱼' },
+            '白露娃': { color: 'cyan', icon: 'fa-water', location: '白鲸馆', top: '15%', left: '75%', question: '白鲸生活在哪里?', answer: '北极' },
+            '土豆': { color: 'slate', icon: 'fa-snowflake', location: '企鹅馆', top: '15%', left: '25%', question: '企鹅会飞吗?', answer: '不会' },
+            '琦琦': { color: 'pink', icon: 'fa-utensils', location: '英雄岛', top: '60%', left: '15%', question: '琦琦也是老虎吗?', answer: '是' },
+            '华仔': { color: 'indigo', icon: 'fa-star', location: '海豚剧场', top: '75%', left: '80%', question: '海豚用什么呼吸?', answer: '肺' },
+            '小精灵': { color: 'purple', icon: 'fa-film', location: '5D城堡', top: '80%', left: '70%', question: '5D影院主角是谁?', answer: '卡卡' },
+            '龟博士': { color: 'green', icon: 'fa-leaf', location: '海鸟世界', top: '50%', left: '85%', question: '海龟有牙齿吗?', answer: '没有' },
+            '波比': { color: 'emerald', icon: 'fa-broom', location: '雨林飞翔', top: '35%', left: '80%', question: '鹦鹉喜欢吃什么?', answer: '坚果' },
+            '卡拉': { color: 'red', icon: 'fa-broom', location: '英雄岛', top: '55%', left: '20%', question: '英雄岛好玩吗?', answer: '好玩!' },
+            '大锤': { color: 'teal', icon: 'fa-user-tag', location: '雨林', top: '30%', left: '70%', question: '过山车快不快?', answer: '快' },
+            '思思': { color: 'rose', icon: 'fa-water', location: '海象山', top: '60%', left: '90%', question: '海象有长牙吗?', answer: '有' },
+            '泡泡': { color: 'sky', icon: 'fa-ship', location: '互动船', top: '25%', left: '35%', question: '这是什么船?', answer: '潜水艇' },
+            '粉小琦': { color: 'fuchsia', icon: 'fa-gem', location: '隐藏款(随机)', top: '85%', left: '40%', isHidden: true, question: '稀有卡!', answer: '找音乐使者' }
+        };
+
+        function switchTab(tabId) {
+            document.querySelectorAll('section').forEach(el => el.classList.add('hidden'));
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            document.getElementById('btn-' + tabId).classList.add('active');
+            window.scrollTo(0, 0);
+
+            if (tabId === 'cards') renderCardsAndMap();
+        }
+
+        function switchDay(day) {
+            const d1 = document.getElementById('timeline-day1');
+            const d2 = document.getElementById('timeline-day2');
+            const modeSelector = document.getElementById('mode-selector');
+            const modeDesc = document.getElementById('mode-desc');
+            const subModeControl = document.getElementById('sub-mode-control');
+
+            document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('btn-' + day).classList.add('active');
+
+            if (day === 'day1') {
+                d1.classList.remove('hidden');
+                d2.classList.add('hidden');
+                modeSelector.classList.remove('hidden');
+                modeDesc.classList.remove('hidden');
+                if (currentMode === 'game') subModeControl.classList.remove('hidden');
+                setMode(currentMode); 
+            } else {
+                d1.classList.add('hidden');
+                d2.classList.remove('hidden');
+                modeSelector.classList.add('hidden');
+                modeDesc.classList.add('hidden');
+                subModeControl.classList.add('hidden');
+            }
+        }
+
+        function setMode(mode) {
+            currentMode = mode;
+            const inactiveClass = "flex-1 py-2 px-1 rounded-lg text-[11px] font-medium text-slate-500 transition-all";
+            ['play', 'game', 'show'].forEach(m => document.getElementById('mode-' + m).className = inactiveClass);
+            document.getElementById('sub-mode-control').classList.add('hidden');
+
+            if (mode === 'play') {
+                document.getElementById('mode-play').className = "flex-1 py-2 px-1 rounded-lg text-[11px] font-bold transition-all bg-green-100 text-green-700";
+                document.getElementById('mode-desc').innerText = "Day 1: 适合5岁宝宝的亲子路线";
+                renderTimeline('play');
+            } else if (mode === 'show') {
+                document.getElementById('mode-show').className = "flex-1 py-2 px-1 rounded-lg text-[11px] font-bold transition-all bg-purple-100 text-purple-700";
+                document.getElementById('mode-desc').innerText = "Day 1: 全天必看演出时刻表";
+                renderTimeline('show');
+            } else if (mode === 'game') {
+                document.getElementById('mode-game').className = "flex-1 py-2 px-1 rounded-lg text-[11px] font-bold transition-all bg-red-100 text-red-700";
+                document.getElementById('sub-mode-control').classList.remove('hidden');
+                toggleSwapMode();
+            }
+        }
+
+        function toggleSwapMode() {
+            if (currentMode !== 'game') return;
+            const isSwapOn = document.getElementById('swap-toggle').checked;
+            document.getElementById('mode-desc').innerText = isSwapOn 
+                ? "Day 1: 全员挑战(含父母轮换攻略)" 
+                : "Day 1: 全员挑战(全家参与项目)";
+            renderTimeline(isSwapOn ? 'game-swap' : 'game-normal');
+        }
+
+        function renderTimeline(renderType) {
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                const type = item.getAttribute('data-type');
+                item.classList.add('hidden');
+                // 1. All
+                if (type === 'all') { item.classList.remove('hidden'); return; }
+                
+                // 2. Play (Parent-Child)
+                if (renderType === 'play' && (type === 'play')) item.classList.remove('hidden');
+                
+                // 3. Show
+                else if (renderType === 'show' && type === 'show') item.classList.remove('hidden');
+                
+                // 4. Game Normal (No swap) -> game + play
+                else if (renderType === 'game-normal' && (type === 'game' || type === 'play')) item.classList.remove('hidden');
+                
+                // 5. Game Swap -> game + play + swap-only
+                else if (renderType === 'game-swap' && (type === 'game' || type === 'play' || type === 'swap-only')) item.classList.remove('hidden');
+            });
+        }
+
+        function renderCardsAndMap() {
+            const grid = document.getElementById('card-grid');
+            const mapContainer = document.getElementById('card-map-container');
+            if (grid.children.length > 0) return;
+
+            while(mapContainer.children.length > 2) mapContainer.removeChild(mapContainer.lastChild);
+
+            for (const [name, data] of Object.entries(cardData)) {
+                const isHidden = data.isHidden ? 'border-2 border-pink-400 bg-pink-50' : 'bg-white';
+                const html = `
+                    <div class="card-item ${isHidden} p-1 rounded-lg text-center card-shadow cursor-pointer border hover:border-blue-400" 
+                         id="card-list-${name}" onclick="selectCard('${name}')">
+                        <div class="w-6 h-6 mx-auto bg-${data.color}-100 rounded-full flex items-center justify-center mb-1 text-${data.color}-500">
+                            <i class="fa-solid ${data.icon} text-xs"></i>
+                        </div>
+                        <div class="text-[10px] font-bold text-slate-700 truncate">${name}</div>
+                    </div>`;
+                grid.innerHTML += html;
+
+                const point = document.createElement('div');
+                point.className = `map-point absolute cursor-pointer`;
+                point.style.left = data.left;
+                point.style.top = data.top;
+                point.id = `map-point-${name}`;
+                point.onclick = (e) => { e.stopPropagation(); selectCard(name); };
+                point.innerHTML = `<div class="w-5 h-5 bg-${data.color}-100 rounded-full flex items-center justify-center shadow-md border border-white"><i class="fa-solid ${data.icon} text-[8px] text-${data.color}-500"></i></div>`;
+                mapContainer.appendChild(point);
+            }
+        }
+
+        function selectCard(name) {
+            if (selectedCardName) {
+                document.getElementById(`card-list-${selectedCardName}`)?.classList.remove('selected-card');
+                document.getElementById(`map-point-${selectedCardName}`)?.classList.remove('highlighted');
+            }
+            document.getElementById(`card-list-${name}`)?.classList.add('selected-card');
+            document.getElementById(`map-point-${name}`)?.classList.add('highlighted');
+            selectedCardName = name;
+
+            const data = cardData[name];
+            const infoPanel = document.getElementById('selected-card-info');
+            const titleIcon = data.isHidden ? '👑 ' : '🃏 ';
+            
+            infoPanel.innerHTML = `
+                <div class="fade-in">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-lg text-slate-800">${titleIcon}${name}</h3>
+                        <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full"><i class="fa-solid fa-location-dot"></i> ${data.location}</span>
+                    </div>
+                    <div class="bg-yellow-50 p-2 rounded text-xs border border-yellow-100">
+                        <span class="font-bold text-yellow-700">🗣️ 任务暗号：</span>
+                        <p class="text-slate-600 mt-1">问：${data.question} <br> 答：<strong>${data.answer}</strong></p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        setMode('play');
+    </script>
+</body>
+</html>
