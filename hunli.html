@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>婚礼作战指挥中心</title>
+    <!-- 引入 Tailwind CSS 用于样式 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Lucide 图标库 -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* 隐藏滚动条但保留功能 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .nav-active {
+            color: #e11d48; /* rose-600 */
+            transform: scale(1.05);
+            font-weight: 700;
+        }
+        .nav-inactive {
+            color: #94a3b8; /* slate-400 */
+        }
+    </style>
+</head>
+<body class="bg-rose-50/30 font-sans text-slate-800 pb-24">
+
+    <!-- 顶部标题栏 -->
+    <header class="bg-white px-6 py-5 shadow-sm border-b border-rose-100 sticky top-0 z-50">
+        <div class="max-w-2xl mx-auto flex justify-between items-center">
+            <div>
+                <h1 class="text-xl font-bold text-rose-900 flex items-center gap-2">
+                    <i data-lucide="heart" class="text-rose-600 fill-rose-600"></i>
+                    婚礼作战指挥中心
+                </h1>
+                <p class="text-xs text-rose-500 font-medium mt-1">目标日期：2026年1月31日</p>
+            </div>
+            <div class="text-center bg-rose-100 px-4 py-2 rounded-lg">
+                <div class="text-xs text-rose-600 font-bold uppercase">倒计时</div>
+                <div class="text-xl font-extrabold text-rose-700 leading-none" id="countdown-display">-- <span class="text-xs">天</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="max-w-2xl mx-auto p-4 space-y-6 relative">
+        
+        <!-- 1. 总览视图 (Overview) -->
+        <div id="view-overview" class="view-section animate-fade-in">
+            
+            <!-- 新增：关键习俗铁律 (Important Customs) -->
+            <section class="bg-amber-50 rounded-xl p-5 shadow-sm border border-amber-200 mb-6">
+                 <h2 class="text-lg font-bold text-amber-900 mb-4 flex items-center gap-2">
+                    <i data-lucide="shield-alert" class="text-amber-600"></i>
+                    🚨 关键习俗铁律 (千万别踩雷)
+                </h2>
+                <div class="space-y-3 text-sm">
+                    <div class="flex gap-3 items-start bg-white p-3 rounded-lg border border-amber-100">
+                        <i data-lucide="users" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
+                        <div>
+                            <span class="font-bold text-slate-800">伴郎伴娘要求</span>
+                            <p class="text-slate-600 mt-1">必须是<span class="font-bold text-red-600">未婚</span>且<span class="font-bold text-red-600">父母健在</span>（俗称“全乎人”）。请人前一定要问清楚！</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start bg-white p-3 rounded-lg border border-amber-100">
+                        <i data-lucide="truck" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
+                        <div>
+                            <span class="font-bold text-slate-800">车队数量</span>
+                            <p class="text-slate-600 mt-1">接亲车辆必须是<span class="font-bold text-red-600">双数</span>（如 6辆、8辆），寓意成双成对。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start bg-white p-3 rounded-lg border border-amber-100">
+                        <i data-lucide="user-plus" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
+                        <div>
+                            <span class="font-bold text-slate-800">送亲人数</span>
+                            <p class="text-slate-600 mt-1">女方送亲人数也必须是<span class="font-bold text-red-600">双数</span>。提前和老婆确认好人数。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 紧急待办 -->
+            <section class="bg-white rounded-xl p-5 shadow-sm border border-rose-100 mb-6">
+                <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                    <i data-lucide="alert-circle" class="text-red-500"></i>
+                    本周必须搞定 (火烧眉毛🔥)
+                </h2>
+                <div class="space-y-3">
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-red-50 border-red-100 shadow-sm hover:bg-red-100" onclick="toggleCheck(this, 'urgent_1')">
+                        <div class="icon-container mt-0.5 shrink-0 text-red-500 transition-colors">
+                            <i data-lucide="circle" class="unchecked-icon"></i>
+                            <i data-lucide="check-circle-2" class="checked-icon hidden"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-content font-medium text-slate-800">联系大学室友定伴郎</div>
+                            <div class="text-xs text-slate-500 mt-0.5">电话确认，要是人不齐得赶紧换方案B</div>
+                        </div>
+                    </div>
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-red-50 border-red-100 shadow-sm hover:bg-red-100" onclick="toggleCheck(this, 'urgent_2')">
+                        <div class="icon-container mt-0.5 shrink-0 text-red-500 transition-colors">
+                            <i data-lucide="circle" class="unchecked-icon"></i>
+                            <i data-lucide="check-circle-2" class="checked-icon hidden"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-content font-medium text-slate-800">发布小米车队招募</div>
+                            <div class="text-xs text-slate-500 mt-0.5">在群里发消息，统计人数</div>
+                        </div>
+                    </div>
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-red-50 border-red-100 shadow-sm hover:bg-red-100" onclick="toggleCheck(this, 'urgent_3')">
+                        <div class="icon-container mt-0.5 shrink-0 text-red-500 transition-colors">
+                            <i data-lucide="circle" class="unchecked-icon"></i>
+                            <i data-lucide="check-circle-2" class="checked-icon hidden"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-content font-medium text-slate-800">去租赁婚纱 & 买婚鞋</div>
+                            <div class="text-xs text-slate-500 mt-0.5">婚纱要去现场看，婚鞋必须提前买好适应</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 2. 采购清单视图 (Tasks/Shopping) -->
+        <div id="view-tasks" class="view-section hidden animate-fade-in space-y-8 pb-10">
+            
+             <!-- 服饰与三金 (更新婚鞋婚纱) -->
+            <div>
+                <h3 class="font-bold text-lg mb-3 flex items-center gap-2 text-purple-600">
+                    <i data-lucide="users"></i> 服饰与三金
+                </h3>
+                <div class="space-y-2">
+                     <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'shop_dress')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">租赁婚纱/礼服</div><div class="text-xs text-slate-500 mt-0.5">带老婆去现场试穿，效果才好</div></div>
+                    </div>
+                     <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'shop_shoes')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">婚鞋 (提前买)</div><div class="text-xs text-slate-500 mt-0.5">一定要提前买来穿几天，防止婚礼当天磨脚</div></div>
+                    </div>
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'shop_1')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">新郎西装 + 衬衫 + 皮鞋</div><div class="text-xs text-slate-500 mt-0.5">确认是否需要干洗/熨烫</div></div>
+                    </div>
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'shop_2')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">伴郎伴娘服</div><div class="text-xs text-slate-500 mt-0.5">赶紧网购，预留退换时间</div></div>
+                    </div>
+                     <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'shop_4')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">五金/三金 (道具或真金)</div><div class="text-xs text-slate-500 mt-0.5">接亲时展示拍照用</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 室内婚房装饰 -->
+            <div>
+                <h3 class="font-bold text-lg mb-3 flex items-center gap-2 text-rose-600">
+                    <i data-lucide="home"></i> 室内婚房装饰 (卧室/客厅)
+                </h3>
+                <div class="space-y-2">
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'deco_in_1')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">静电喜字贴 (大号x2, 小号x10)</div><div class="text-xs text-slate-500 mt-0.5">贴门窗玻璃，不留胶</div></div>
+                    </div>
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'deco_in_2')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">无纺布喜字拉花</div><div class="text-xs text-slate-500 mt-0.5">客厅天花板对角拉，出片神器</div></div>
+                    </div>
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'deco_in_3')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">红色四件套 & 压床娃娃</div><div class="text-xs text-slate-500 mt-0.5">如果是旧床，换套新的红色床品</div></div>
+                    </div>
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'deco_in_4')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">气球套餐 + 打气筒</div><div class="text-xs text-slate-500 mt-0.5">红金配色最稳，别买五颜六色的</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 室外与楼梯装饰 (针对你的地形) -->
+            <div>
+                <h3 class="font-bold text-lg mb-3 flex items-center gap-2 text-rose-600">
+                    <i data-lucide="trending-up"></i> 外部与楼梯装饰
+                </h3>
+                <div class="space-y-2">
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'deco_out_1')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">楼梯扶手纱幔/红布</div><div class="text-xs text-slate-500 mt-0.5">每隔一段扎一个蝴蝶结，遮挡旧扶手</div></div>
+                    </div>
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'deco_out_2')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">巷口指引牌 (迎宾牌)</div><div class="text-xs text-slate-500 mt-0.5">如果巷子深，要在路口放个“xx府大婚”</div></div>
+                    </div>
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'deco_out_3')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">大门花球/红灯笼</div><div class="text-xs text-slate-500 mt-0.5">挂在大门口，喜气洋洋</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 婚车装饰 -->
+             <div>
+                <h3 class="font-bold text-lg mb-3 flex items-center gap-2 text-rose-600">
+                    <i data-lucide="car"></i> 婚车装饰
+                </h3>
+                <div class="space-y-2">
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'deco_car_1')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">主车花盘 (吸盘式)</div><div class="text-xs text-slate-500 mt-0.5">网购成品，V字型或心形，要买吸力强的！</div></div>
+                    </div>
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'deco_car_2')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">副车拉花/丝带 (x10套)</div><div class="text-xs text-slate-500 mt-0.5">多买两套备用，绑在后视镜和门把手</div></div>
+                    </div>
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'deco_car_3')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">车牌遮挡贴 (百年好合)</div><div class="text-xs text-slate-500 mt-0.5">拍照时贴一下，上路记得撕掉</div></div>
+                    </div>
+                </div>
+            </div>
+            
+             <!-- 习俗食品 -->
+            <div>
+                <h3 class="font-bold text-lg mb-3 flex items-center gap-2 text-amber-600">
+                    <i data-lucide="shopping-bag"></i> 习俗杂项
+                </h3>
+                <div class="space-y-2">
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'shop_gift')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">伴手礼 (准备)</div><div class="text-xs text-slate-500 mt-0.5">给车队、伴郎伴娘的，还有接亲游戏的小礼物</div></div>
+                    </div>
+                     <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'shop_tray')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">红色托盘/红箱子</div><div class="text-xs text-slate-500 mt-0.5">专门用来装那10万彩礼尾款的，接亲时带过去</div></div>
+                    </div>
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'shop_13')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">散糖/喜糖/伴手礼盒</div><div class="text-xs text-slate-500 mt-0.5">包装要喜庆，提前装好</div></div>
+                    </div>
+                    <div class="check-item p-4 rounded-lg flex items-start gap-3 cursor-pointer transition-all border bg-white border-slate-200 shadow-sm hover:border-rose-200" onclick="toggleCheck(this, 'shop_15')">
+                        <div class="icon-container mt-0.5 shrink-0 text-rose-400 transition-colors"><i data-lucide="circle" class="unchecked-icon"></i><i data-lucide="check-circle-2" class="checked-icon hidden"></i></div>
+                        <div class="flex-1"><div class="text-content font-medium text-slate-800">矿泉水 (整箱) & 散烟</div><div class="text-xs text-slate-500 mt-0.5">结婚当天车上、家里招待必备</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. 预算视图 (Budget) -->
+        <div id="view-budget" class="view-section hidden animate-fade-in space-y-6">
+            <div class="bg-indigo-50 border border-indigo-100 p-4 rounded-lg">
+                <h2 class="font-bold text-indigo-900 text-lg mb-2">💰 现金流预警</h2>
+                <p class="text-sm text-indigo-700">婚礼当天需要准备大量现金，建议提前去银行换好新钞。</p>
+            </div>
+
+             <!-- 新增：大额现金准备 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-red-50 px-4 py-3 border-b border-red-100 flex justify-between items-center">
+                    <h3 class="font-bold text-red-800">🧧 大额现金准备 (必须新钞)</h3>
+                    <span class="text-xs bg-red-200 text-red-800 px-2 py-1 rounded">最重要</span>
+                </div>
+                <div class="divide-y divide-slate-100">
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-700">彩礼尾款</div>
+                            <div class="text-xs text-slate-500 text-red-500 font-bold">⚠️ 用红色托盘/箱子装好带去</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-red-600">¥100,000</div>
+                            <div class="text-xs text-slate-400">总18.8w - 已付88888 ≈ 10w</div>
+                        </div>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-700">改口费</div>
+                            <div class="text-xs text-slate-500">给爸妈的敬茶红包</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-red-600">¥37,600</div>
+                            <div class="text-xs text-slate-400">¥18,800 x 2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1. 酒席费用 -->
+             <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-amber-50 px-4 py-3 border-b border-amber-100 flex justify-between items-center">
+                    <h3 class="font-bold text-amber-800">🍽️ 婚宴酒席支出</h3>
+                    <span class="text-xs bg-amber-200 text-amber-800 px-2 py-1 rounded">重头戏</span>
+                </div>
+                <div class="divide-y divide-slate-100">
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-700">单桌标准</div>
+                            <div class="text-xs text-slate-500">1499元菜品 + 301元烟酒水</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-amber-600">¥1,800/桌</div>
+                        </div>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-700">预估桌数</div>
+                            <div class="text-xs text-slate-500">按90-100人算 (女方40+男方50)</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-slate-600">~10桌</div>
+                        </div>
+                    </div>
+                    <div class="p-4 flex justify-between items-center bg-slate-50">
+                        <div class="font-bold text-slate-800">酒席总计</div>
+                        <div class="font-bold text-xl text-amber-600">¥18,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. 红包支出 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-rose-50 px-4 py-3 border-b border-rose-100 flex justify-between items-center">
+                    <h3 class="font-bold text-rose-800">🧧 其它红包支出</h3>
+                    <span class="text-xs bg-rose-200 text-rose-800 px-2 py-1 rounded">必需</span>
+                </div>
+                <div class="divide-y divide-slate-100">
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-700">满堂红 (全员红包)</div>
+                            <div class="text-xs text-slate-500">包含男方女方亲友，见者有份</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-rose-600">¥20,000</div>
+                            <div class="text-xs text-slate-400">按100人预备 (¥200/人)</div>
+                        </div>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-700">车队红包 (含油费)</div>
+                            <div class="text-xs text-slate-500">按8辆车算</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-rose-600">¥7,104</div>
+                            <div class="text-xs text-slate-400">¥888 x 8</div>
+                        </div>
+                    </div>
+                     <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-700">接亲/堵门红包</div>
+                            <div class="text-xs text-slate-500">小额撒喜气用</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-rose-600">¥500</div>
+                            <div class="text-xs text-slate-400">准备几十个</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. 物品采购支出 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-blue-50 px-4 py-3 border-b border-blue-100 flex justify-between items-center">
+                    <h3 class="font-bold text-blue-800">🛒 物品采购/租赁预算</h3>
+                    <span class="text-xs bg-blue-200 text-blue-800 px-2 py-1 rounded">丰俭由人</span>
+                </div>
+                <div class="divide-y divide-slate-100">
+                     <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-700">婚纱租赁</div>
+                            <div class="text-xs text-slate-500">现场试穿后定</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-slate-600">待定</div>
+                            <div class="text-xs text-slate-400">建议预算 ¥2000-5000</div>
+                        </div>
+                    </div>
+                     <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-700">婚鞋</div>
+                            <div class="text-xs text-slate-500">提前买，要舒服</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-slate-600">¥500 - ¥1,000</div>
+                            <div class="text-xs text-slate-400">预估</div>
+                        </div>
+                    </div>
+                     <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-700">伴手礼</div>
+                            <div class="text-xs text-slate-500">车队/伴郎伴娘/宾客回礼</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-slate-600">¥2,000</div>
+                            <div class="text-xs text-slate-400">预估</div>
+                        </div>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-700">三金/五金</div>
+                            <div class="text-xs text-slate-500">看买真金还是道具</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-slate-600">¥200 - ¥30,000</div>
+                            <div class="text-xs text-slate-400">弹性极大</div>
+                        </div>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-700">服饰 (伴郎/伴娘/自己)</div>
+                            <div class="text-xs text-slate-500">网购大概预算</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-slate-600">¥1,500</div>
+                            <div class="text-xs text-slate-400">预估</div>
+                        </div>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-700">婚房装饰材料</div>
+                            <div class="text-xs text-slate-500">气球、喜字、拉花、花盘</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-slate-600">¥500 - ¥800</div>
+                            <div class="text-xs text-slate-400">自己动手</div>
+                        </div>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-700">烟酒糖茶 (招待用)</div>
+                            <div class="text-xs text-slate-500">不含酒席，仅家里招待</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-slate-600">¥2,000</div>
+                            <div class="text-xs text-slate-400">预估</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+             <div class="mt-6 bg-slate-900 text-white rounded-xl p-6 shadow-lg">
+                <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                    <i data-lucide="calculator" class="text-emerald-400"></i>
+                    总预算预估汇总
+                </h3>
+                <div class="space-y-3 text-sm">
+                    <div class="flex justify-between">
+                        <span>大额现金 (彩礼尾款+改口费)</span>
+                        <span class="font-mono">¥137,600</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>酒席 (10桌)</span>
+                        <span class="font-mono">¥18,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>其它红包 (满堂红+车队等)</span>
+                        <span class="font-mono">~¥27,600</span>
+                    </div>
+                     <div class="flex justify-between text-slate-400">
+                        <span>物品采购/租赁 (预估)</span>
+                        <span class="font-mono">~¥10,000+</span>
+                    </div>
+                    <div class="border-t border-slate-700 pt-3 mt-2 flex justify-between items-center">
+                        <span class="font-bold text-emerald-400">预计总支出 (流动资金)</span>
+                        <span class="font-bold text-xl">~¥195,000</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-2">* 不含已付的彩礼首款(8.8w)和购房等大件。</p>
+                </div>
+            </div>
+            
+             <div class="text-xs text-slate-400 text-center mt-4">
+                * 以上仅为估算，实际以你当地物价为准
+            </div>
+        </div>
+
+        <!-- 4. 车队视图 (Logistics) -->
+        <div id="view-logistics" class="view-section hidden animate-fade-in space-y-6">
+            <!-- 方案对比 -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                <h2 class="text-lg font-bold text-slate-800 mb-4">🚗 婚车方案决策</h2>
+                <div class="flex flex-col gap-4">
+                    <div class="border-2 border-rose-100 bg-rose-50 p-4 rounded-lg relative">
+                        <div class="absolute top-0 right-0 bg-rose-500 text-white text-xs font-bold px-2 py-1 rounded-bl-lg rounded-tr-sm">首选方案</div>
+                        <h3 class="font-bold text-rose-800 text-lg">方案 A：小米车友队</h3>
+                        <p class="text-sm text-rose-700 mt-1 mb-3">整齐划一，排面足，也是你的心愿。</p>
+                        <div class="bg-white p-3 rounded border border-rose-100 text-sm space-y-2">
+                            <div class="flex justify-between"><span>红包策略</span><span class="font-bold">¥666 + ¥200 (或同等价值礼物)</span></div>
+                            <div class="flex justify-between"><span>路费油费</span><span class="font-bold text-orange-600">需自费高速 (已含在红包内)</span></div>
+                             <div class="flex justify-between"><span>目的地</span><span class="font-bold text-slate-700">耒阳 (走高速)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="border border-slate-200 bg-slate-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-slate-700 text-lg">方案 B：亲友拼凑队</h3>
+                        <p class="text-sm text-slate-500 mt-1 mb-3">如果车友凑不齐的保底方案。</p>
+                        <div class="text-sm text-slate-600">
+                            优点是人熟好说话；缺点是车型颜色不统一，拍照效果一般。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 招募文案 -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                <h2 class="text-lg font-bold text-slate-800 mb-3 flex justify-between items-center">
+                    📋 车友群招募文案
+                    <span class="text-xs font-normal text-slate-400 bg-slate-100 px-2 py-1 rounded cursor-pointer hover:bg-slate-200" onclick="copyText()">点击复制</span>
+                </h2>
+                <div id="copy-target" class="bg-slate-50 p-4 rounded-lg text-sm text-slate-700 leading-relaxed font-mono relative group cursor-pointer active:bg-slate-100 border border-slate-200" onclick="copyText()">
+                    <p>各位车友大家好！👋</p>
+                    <p class="mt-2">本人将于 <span class="font-bold text-rose-600">1月31日</span> 举办婚礼，想组建一支咱们小米车友婚车队，特来求助兄弟们！🚗💨</p>
+                    <p class="mt-2">【时间】：1月31日 早上 <span class="font-bold text-slate-800">5:30</span> 集合</p>
+                    <p>【地点】：目的地 <span class="font-bold text-slate-800">耒阳</span> (需走高速，过路费自理)</p>
+                    <p class="mt-2">因为路途稍远，为表心意，特准备了 <span class="font-bold text-rose-600">888元 吉利大红包</span>（含油费/高速费补贴），外加喜烟喜糖伴手礼一份！🧧</p>
+                    <p class="mt-2">希望有空的兄弟能来捧个场，一起沾沾喜气！能来的请扣1或私信我，还差 x 辆车，非常感谢！🙏</p>
+                    <i data-lucide="copy" class="absolute bottom-4 right-4 text-slate-300 group-hover:text-slate-500 w-4 h-4"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. 流程视图 (Timeline) -->
+        <div id="view-timeline" class="view-section hidden animate-fade-in pb-10">
+            <div class="relative border-l-2 border-rose-200 ml-3 space-y-8 pl-6 py-2">
+                <!-- Timeline Item 1 -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center absolute -left-2.5">
+                        <div class="w-5 h-5 rounded-full bg-slate-100 border-2 border-rose-400 flex items-center justify-center">
+                            <i data-lucide="truck" class="w-3 h-3 text-rose-500"></i>
+                        </div>
+                    </div>
+                    <div class="pb-2">
+                        <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">1月25日 (腊月廿六)</div>
+                        <div class="font-bold text-slate-800 text-lg">新郎回家</div>
+                        <div class="text-sm text-slate-600 mt-1">带上所有买好的东西（衣服、红包壳、装饰）回家。确认伴郎服装是否到位。</div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center absolute -left-2.5">
+                        <div class="w-5 h-5 rounded-full bg-slate-100 border-2 border-rose-400 flex items-center justify-center">
+                            <i data-lucide="heart" class="w-3 h-3 text-rose-500"></i>
+                        </div>
+                    </div>
+                    <div class="pb-2">
+                        <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">1月27-28日</div>
+                        <div class="font-bold text-slate-800 text-lg">新娘汇合 & 试纱</div>
+                        <div class="text-sm text-slate-600 mt-1">新娘高铁到达。去婚纱店试礼服，最后确认尺寸。双方父母最好见一面确认流程。</div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="flex gap-4">
+                     <div class="flex flex-col items-center absolute -left-2.5">
+                        <div class="w-5 h-5 rounded-full bg-slate-100 border-2 border-rose-400 flex items-center justify-center">
+                            <i data-lucide="users" class="w-3 h-3 text-rose-500"></i>
+                        </div>
+                    </div>
+                    <div class="pb-2">
+                        <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">1月29-30日</div>
+                        <div class="font-bold text-slate-800 text-lg">全员就位 & 场地布置</div>
+                        <div class="text-sm text-slate-600 mt-1">伴郎伴娘到位。家里贴喜字、吹气球。如果伴娘没来，新郎新娘先去酒店走一遍T台位。</div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                 <div class="flex gap-4">
+                     <div class="flex flex-col items-center absolute -left-2.5">
+                        <div class="w-5 h-5 rounded-full bg-red-100 border-2 border-red-500 flex items-center justify-center animate-pulse">
+                            <i data-lucide="calendar" class="w-3 h-3 text-red-600"></i>
+                        </div>
+                    </div>
+                    <div class="pb-2">
+                        <div class="text-xs font-bold text-red-500 uppercase tracking-wider">1月31日 (正月初三)</div>
+                        <div class="font-bold text-red-800 text-lg">🎉 婚礼大喜之日</div>
+                        <div class="text-sm text-slate-700 mt-1 bg-red-50 p-2 rounded border border-red-100">上午接亲 -> 中午仪式/敬酒。记得安排专人管红包和烟酒。</div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="bg-amber-50 p-4 rounded-lg border border-amber-100 text-sm text-amber-800 mt-6">
+                <h3 class="font-bold mb-2 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4"></i> ⚠️ 异地接亲特别注意</h3>
+                <p>因为是异地接亲（甚至可能是酒店接亲），一定要提前问清楚酒店是否允许贴喜字、放鞭炮。如果是酒店接亲，要提前把婚纱、鞋子、敬茶道具搬到酒店房间。</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 底部导航栏 -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-2 py-2 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] z-50">
+        <div class="max-w-2xl mx-auto flex justify-between items-center">
+            <button onclick="switchTab('overview')" id="nav-overview" class="nav-btn nav-active flex flex-col items-center gap-1 p-2 transition-all">
+                <i data-lucide="clipboard-list" class="w-6 h-6"></i>
+                <span class="text-[10px]">总览</span>
+            </button>
+            <button onclick="switchTab('tasks')" id="nav-tasks" class="nav-btn nav-inactive flex flex-col items-center gap-1 p-2 transition-all">
+                <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                <span class="text-[10px]">采购</span>
+            </button>
+            <button onclick="switchTab('budget')" id="nav-budget" class="nav-btn nav-inactive flex flex-col items-center gap-1 p-2 transition-all">
+                <i data-lucide="wallet" class="w-6 h-6"></i>
+                <span class="text-[10px]">预算</span>
+            </button>
+            <button onclick="switchTab('logistics')" id="nav-logistics" class="nav-btn nav-inactive flex flex-col items-center gap-1 p-2 transition-all">
+                <i data-lucide="truck" class="w-6 h-6"></i>
+                <span class="text-[10px]">车队</span>
+            </button>
+            <button onclick="switchTab('timeline')" id="nav-timeline" class="nav-btn nav-inactive flex flex-col items-center gap-1 p-2 transition-all">
+                <i data-lucide="calendar" class="w-6 h-6"></i>
+                <span class="text-[10px]">流程</span>
+            </button>
+        </div>
+    </nav>
+
+    <script>
+        // 初始化 Lucide 图标
+        lucide.createIcons();
+
+        // 倒计时逻辑 - 更新为2026年
+        const weddingDate = new Date('2026-01-31T00:00:00');
+        const today = new Date();
+        const timeDiff = weddingDate - today;
+        const daysLeft = Math.max(0, Math.ceil(timeDiff / (1000 * 60 * 60 * 24)));
+        document.getElementById('countdown-display').innerHTML = `${daysLeft} <span class="text-xs">天</span>`;
+
+        // 标签切换逻辑
+        function switchTab(tabId) {
+            // 隐藏所有视图
+            document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
+            // 显示目标视图
+            document.getElementById(`view-${tabId}`).classList.remove('hidden');
+
+            // 更新导航按钮样式
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.className = 'nav-btn nav-inactive flex flex-col items-center gap-1 p-2 transition-all';
+            });
+
+            // 高亮当前按钮
+            const activeBtn = document.getElementById(`nav-${tabId}`);
+            activeBtn.className = 'nav-btn nav-active flex flex-col items-center gap-1 p-2 transition-all';
+        }
+
+        // 勾选功能逻辑
+        function toggleCheck(element, id) {
+            const uncheckedIcon = element.querySelector('.unchecked-icon');
+            const checkedIcon = element.querySelector('.checked-icon');
+            const textContent = element.querySelector('.text-content');
+            const iconContainer = element.querySelector('.icon-container');
+
+            // 切换状态
+            const isChecked = !checkedIcon.classList.contains('hidden');
+
+            if (!isChecked) {
+                // 变为已勾选
+                uncheckedIcon.classList.add('hidden');
+                checkedIcon.classList.remove('hidden');
+                
+                element.classList.remove('bg-white', 'border-slate-200', 'bg-red-50', 'border-red-100'); // 移除可能的背景
+                element.classList.add('bg-slate-50', 'border-slate-100', 'opacity-60');
+                
+                textContent.classList.add('text-slate-400', 'line-through');
+                textContent.classList.remove('text-slate-800');
+                
+                iconContainer.classList.remove('text-rose-400', 'text-red-500');
+                iconContainer.classList.add('text-slate-400');
+            } else {
+                // 变为未勾选
+                checkedIcon.classList.add('hidden');
+                uncheckedIcon.classList.remove('hidden');
+
+                element.classList.remove('bg-slate-50', 'border-slate-100', 'opacity-60');
+                // 简单恢复为白色背景，对于紧急任务的红色高亮逻辑这里简化处理，统一恢复为白/hover态
+                element.classList.add('bg-white', 'border-slate-200');
+                
+                textContent.classList.remove('text-slate-400', 'line-through');
+                textContent.classList.add('text-slate-800');
+                
+                iconContainer.classList.remove('text-slate-400');
+                // 恢复默认颜色
+                iconContainer.classList.add('text-rose-400');
+            }
+        }
+
+        // 复制文本功能
+        function copyText() {
+            const textToCopy = `各位车友大家好！👋
+
+本人将于 1月31日 举办婚礼，想组建一支咱们小米车友婚车队，特来求助兄弟们！🚗💨
+
+【时间】：1月31日 早上 5:30 集合
+【地点】：目的地 耒阳 (需走高速，过路费自理)
+
+因为路途稍远，为表心意，特准备了 888元 吉利大红包（含油费/高速费补贴），外加喜烟喜糖伴手礼一份！🧧
+
+希望有空的兄弟能来捧个场，一起沾沾喜气！能来的请扣1或私信我，还差 x 辆车，非常感谢！🙏`;
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert("文案已复制！快去群里发吧！");
+            }).catch(err => {
+                console.error('无法复制文本: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
