@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>婚礼致辞：红鸾·金誓</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #fff1f2; /* 浅玫瑰色背景 */
+            background-image: linear-gradient(180deg, #fff1f2 0%, #fff7ed 100%);
+            color: #4a0404; /* 深红褐色文字 */
+        }
+        .serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+        .title-red {
+            color: #9f1239; /* 玫瑰红标题 */
+        }
+        .highlight {
+            color: #b91c1c; /* 正红色 */
+            font-weight: 700;
+            background: linear-gradient(120deg, rgba(254, 202, 202, 0.4) 0%, rgba(254, 240, 138, 0.4) 100%);
+            padding: 0 6px;
+            border-radius: 4px;
+            border-bottom: 2px solid #fcd34d; /* 金色下划线 */
+        }
+        .cue {
+            color: #94a3b8; /* 辅助说明文字 */
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+            font-family: 'Noto Serif SC', serif;
+            color: #78350f; /* 琥珀褐 */
+            opacity: 0.7;
+        }
+        .music-tag {
+            background-color: #fff1f2;
+            color: #be123c;
+            border: 1px solid #fecdd3;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 2px 4px rgba(190, 18, 60, 0.05);
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #ffe4e6;
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(190, 18, 60, 0.05), 0 4px 6px -2px rgba(190, 18, 60, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+        /* 金色边框装饰 */
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #be123c, #f59e0b, #be123c);
+        }
+        .action-box {
+            background-color: #fff7ed; /* 橙白底 */
+            border-left: 3px solid #f59e0b; /* 金色边 */
+            padding: 0.75rem;
+            margin: 0.5rem 0 1.2rem 0;
+            color: #92400e; /* 琥珀色字 */
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 0 8px 8px 0;
+        }
+        .section-num {
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 4rem;
+            color: #fecdd3; /* 浅粉红 */
+            opacity: 0.3;
+            font-weight: 700;
+            z-index: 0;
+            pointer-events: none;
+            line-height: 1;
+        }
+        .content-text {
+            position: relative;
+            z-index: 10;
+        }
+        .corner-decor {
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, #fecdd3 10%, transparent 70%);
+            opacity: 0.5;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+
+    <!-- Header -->
+    <div class="pt-10 pb-8 px-6 text-center relative overflow-hidden">
+        <!-- 装饰背景圆 -->
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-64 h-64 bg-red-100 rounded-full blur-3xl opacity-50 -z-10"></div>
+        
+        <div class="inline-block px-4 py-1 border border-red-200 rounded-full text-xs text-red-800 tracking-widest uppercase mb-4 bg-white shadow-sm">
+            囍 · 2026.01.31 · 囍
+        </div>
+        <h1 class="serif text-3xl title-red font-bold tracking-wide mb-2">蓝色的回响</h1>
+        <div class="w-12 h-1 bg-red-800 mx-auto rounded-full opacity-20 mt-4"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-md mx-auto px-4">
+
+        <!-- 01 开场 -->
+        <div class="card">
+            <span class="section-num">01</span>
+            <div class="content-text">
+                <div class="music-tag">🎵 BGM: Merry Christmas Mr. Lawrence (前奏)</div>
+                <div class="action-box">🧍‍♂️ 站稳，双手扶麦，微笑致意</div>
+                
+                <p class="serif text-xl leading-relaxed mb-6 font-bold text-red-900">
+                    各位来宾，各位长辈们，<br>
+                    大家中午好。
+                </p>
+                
+                <p class="text-lg leading-relaxed mb-4 text-slate-700">
+                    世间所有的相遇，<br>
+                    都是命运埋下的伏笔。<br>
+                    <span class="cue">（停顿 1秒）</span>
+                    去年的二月，<br>
+                    也是这样的冬天。
+                </p>
+
+                <div class="action-box">👀 看一眼主桌父亲，点头</div>
+                <p class="text-lg leading-relaxed text-slate-800">
+                    得益于<span class="highlight">两位父亲的引路</span>，<br>
+                    让两颗原本运行在不同轨道的星星，<br>
+                    <span class="cue">（轻声，温柔）</span>
+                    <span class="highlight text-red-700">第一次，有了交汇。</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 02 讲述 -->
+        <div class="card">
+            <span class="section-num">02</span>
+            <div class="content-text">
+                <p class="text-lg leading-relaxed mb-4 text-slate-700">
+                    那时的我，还没意识到，<br>
+                    那个三月，<br>
+                    将会是我生命中，<br>
+                    春天真正的开始。
+                </p>
+                <div class="cue">（停顿 2秒，深呼吸）</div>
+                <p class="text-xl serif font-bold title-red mt-4 border-l-4 border-red-300 pl-4 bg-red-50 py-2 rounded-r">
+                    我终于找到了那个，<br>
+                    和我<span class="highlight">频率相同</span>的人。
+                </p>
+            </div>
+        </div>
+
+        <!-- 03 高潮 (珠海) -->
+        <div class="card">
+            <span class="section-num">03</span>
+            <div class="content-text">
+                <div class="music-tag">🎵 切歌: The Cello Song (大提琴)</div>
+                <div class="action-box">👀 侧身面向新娘，眼神专注</div>
+
+                <p class="text-lg leading-relaxed mb-4 text-slate-700">
+                    四月，珠海。<br>
+                    <span class="cue">（给画面感）</span>
+                    在长隆那片深海般的幽蓝光影里。<br>
+                    周围很暗，人潮拥挤。
+                </p>
+
+                <p class="text-xl font-bold mb-6 text-red-900">
+                    但我眼里，<br>
+                    只有<span class="border-b-2 border-red-200 text-red-700">被光照亮的你</span>。
+                </p>
+
+                <div class="action-box">🌬 深呼吸，字字清晰</div>
+                <p class="text-lg leading-relaxed mb-4 text-slate-700">
+                    那一刻的生动和鲜活，<br>
+                    让我突然产生了一个念头：
+                </p>
+                <p class="serif text-2xl title-red leading-snug font-bold">
+                    “我想把这份美好，<br>
+                    延续成我们的一辈子。”
+                </p>
+            </div>
+            <div class="corner-decor"></div>
+        </div>
+
+        <!-- 04 坚定 -->
+        <div class="card">
+            <span class="section-num">04</span>
+            <div class="content-text">
+                <p class="text-lg leading-relaxed mb-4 text-slate-700">
+                    从五月拜访你的父母，<br>
+                    到十月我们定下婚约。<br>
+                    这不仅仅是祁东到耒阳的距离，
+                </p>
+                <div class="action-box">点头确认</div>
+                <p class="text-lg leading-relaxed text-slate-800">
+                    这是我走向你的——<br>
+                    <span class="highlight">每一步坚定。</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 05 誓言 -->
+        <div class="card">
+            <span class="section-num">05</span>
+            <div class="content-text">
+                <div class="music-tag">🎵 推大音量: Turning Page</div>
+                <div class="action-box">❤️ 向前半步，右手轻按胸口</div>
+
+                <p class="text-lg leading-relaxed mb-4 text-slate-800 font-medium">
+                    老婆。<br>
+                    在这个善变的时代，<br>
+                    我不想许下虚无缥缈的诺言。
+                </p>
+
+                <p class="text-lg leading-relaxed mb-6 font-medium text-slate-700">
+                    我只想做你<span class="highlight">最踏实的后盾</span>，<br>
+                    做你风雨中，最稳的港湾。
+                </p>
+
+                <p class="text-lg leading-relaxed mb-2 text-slate-700">
+                    未来的日子，<br>
+                    你的天马行空，<br>
+                    你的奇思妙想，
+                </p>
+                <div class="action-box">👀 眼神坚定，给她信心</div>
+                <p class="serif text-2xl title-red font-bold">
+                    尽管交给我，<br>
+                    我会陪你——一一实现。
+                </p>
+            </div>
+        </div>
+
+        <!-- 06 结尾 -->
+        <div class="card bg-red-50 border-red-200">
+            <span class="section-num text-red-200">06</span>
+            <div class="content-text">
+                <div class="music-tag bg-white">🎵 音乐渐弱，背景垫乐</div>
+                <div class="action-box bg-white border-red-400 text-red-900">🙏 转向长辈席，语气温情</div>
+
+                <p class="text-lg leading-relaxed mb-4 text-slate-800">
+                    今天，<br>
+                    也要特别感谢岳父岳母，<br>
+                    感谢我的父母，<br>
+                    还有敬爱的<span class="highlight">奶奶和外婆</span>。
+                </p>
+                <p class="text-lg leading-relaxed mb-6 border-l-4 border-red-300 pl-4 text-slate-600">
+                    是你们的爱，<br>
+                    成全了我们的小家。
+                </p>
+
+                <div class="action-box bg-white border-yellow-500 text-yellow-900">🍷 举杯 / 举右手</div>
+                <p class="text-xl serif font-bold mb-2 title-red">
+                    在此，<br>
+                    感谢大家不远千里，<br>
+                    来<span class="highlight">见证这份幸福</span>。
+                </p>
+                
+                <p class="text-3xl mt-6 text-center font-bold text-red-800 tracking-wider">谢谢大家！</p>
+                <div class="cue justify-center text-red-400">（深鞠躬 3秒）</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-red-300 text-xs mb-10 mt-6 font-serif">
+            <p>Happy Wedding · 2026.01.31</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
