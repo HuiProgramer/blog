@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>婚礼行程表</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // --- Icons Components (内嵌SVG，无需额外下载) ---
+        const IconWrapper = ({ children, className }) => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                {children}
+            </svg>
+        );
+
+        const Sun = (props) => <IconWrapper {...props}><circle cx="12" cy="12" r="5"/><path d="M12 1v2"/><path d="M12 21v2"/><path d="M4.22 4.22l1.42 1.42"/><path d="M18.36 18.36l1.42 1.42"/><path d="M1 12h2"/><path d="M21 12h2"/><path d="M4.22 19.78l1.42-1.42"/><path d="M18.36 5.64l1.42-1.42"/></IconWrapper>;
+        const Moon = (props) => <IconWrapper {...props}><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></IconWrapper>;
+        const Gift = (props) => <IconWrapper {...props}><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></IconWrapper>;
+        const Music = (props) => <IconWrapper {...props}><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></IconWrapper>;
+        const Heart = (props) => <IconWrapper {...props}><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></IconWrapper>;
+        const Coffee = (props) => <IconWrapper {...props}><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></IconWrapper>;
+        const BatteryCharging = (props) => <IconWrapper {...props}><path d="M15 7h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><path d="M6 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1"/><line x1="13" y1="11" x2="13" y2="17"/><polyline points="15 13 13 11 11 13"/></IconWrapper>; // Simplified for charging visual
+        const CheckCircle = (props) => <IconWrapper {...props}><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></IconWrapper>;
+        const UserIcon = (props) => <IconWrapper {...props}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></IconWrapper>;
+        const Car = (props) => <IconWrapper {...props}><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17h8"/></IconWrapper>;
+        const Camera = (props) => <IconWrapper {...props}><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></IconWrapper>;
+        const MapPin = (props) => <IconWrapper {...props}><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></IconWrapper>;
+        const Home = (props) => <IconWrapper {...props}><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></IconWrapper>;
+        const Scissors = (props) => <IconWrapper {...props}><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></IconWrapper>;
+        const Users = (props) => <IconWrapper {...props}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></IconWrapper>;
+        const BedDouble = (props) => <IconWrapper {...props}><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></IconWrapper>;
+        const GlassWater = (props) => <IconWrapper {...props}><path d="M15.2 22H8.8a2 2 0 0 1-2-1.79L5 3h14l-1.81 17.21A2 2 0 0 1 15.2 22Z"/><path d="M6 12a5 5 0 0 1 6 0 5 5 0 0 0 6 0"/></IconWrapper>;
+
+        // --- Main Component ---
+        const WeddingSchedule = () => {
+            const [activeTab, setActiveTab] = useState('day1');
+
+            const scheduleData = {
+                day1: [
+                    { time: '08:00', icon: Sun, title: '起床开启美好的一天', desc: '精神饱满，准备迎接忙碌的一天' },
+                    { time: '09:00', icon: Gift, title: '物资准备', desc: '准备瓜子、花生、水果；整理婚纱' },
+                    { time: '10:00', icon: Music, title: '氛围布置 & 音乐', desc: '回家打气球；下载过年的歌曲存入U盘' },
+                    { time: '11:00', icon: Heart, title: '布置楼道', desc: '贴楼道气球，增添喜气' },
+                    { time: '12:00', icon: Coffee, title: '午餐时间', desc: '做饭，补充体力' },
+                    { time: '12:30', icon: BatteryCharging, title: '给小米SU7充电', desc: '中午电价便宜，把爱车充满电' },
+                    { time: '14:00', icon: CheckCircle, title: '充电完成', desc: '检查车辆电量' },
+                    { time: '14:30', icon: UserIcon, title: '接化妆师', desc: '准时出发' },
+                    { time: '14:50', icon: Car, title: '送老婆回家', desc: '出发前往塞纳河畔' },
+                    { time: '17:00', icon: MapPin, title: '到达塞纳河畔', desc: '安全抵达，送老婆到目的地' },
+                    { time: '17:30', icon: Car, title: '返程', desc: '出发回家' },
+                    { time: '20:00', icon: Home, title: '到家', desc: '稍作休息' },
+                    { time: '20:20', icon: Gift, title: '扎花/装饰', desc: '装饰婚车/手捧花' },
+                    { time: '20:40', icon: Scissors, title: '个人形象 & 爱车', desc: '剪头发，洗车' },
+                    { time: '22:00', icon: BatteryCharging, title: '最终充电', desc: '确保所有电子设备、手机电量充足' },
+                    { time: '23:20', icon: CheckCircle, title: '准备就绪', desc: '充电完成，检查明日物品' },
+                    { time: '24:00', icon: Moon, title: '休息', desc: '美容觉，保持最佳状态' },
+                ],
+                day2: [
+                    { time: '04:30', icon: Sun, title: '起床', desc: '大喜之日！洗漱唤醒' },
+                    { time: '05:00', icon: Users, title: '集合', desc: '亲友团/车队集合' },
+                    { time: '05:20', icon: Car, title: '出发接亲', desc: '向幸福出发' },
+                    { time: '07:30', icon: MapPin, title: '到达耒阳会事厅', desc: '准时到达' },
+                    { 
+                        time: '07:30', 
+                        endTime: '07:40',
+                        icon: Gift, 
+                        title: '准备聘礼茶盘', 
+                        desc: '取出四个茶盘，铺红纸，摆放物品',
+                        details: [
+                            '茶盘1：10w元现金',
+                            '茶盘2：五金（金饰）',
+                            '茶盘3：6条烟',
+                            '茶盘4：6瓶酒'
+                        ],
+                        highlight: true
+                    },
+                    { time: '07:50', endTime: '08:00', icon: Home, title: '拜祠堂', desc: '祭拜祖先' },
+                    { time: '08:00', endTime: '08:30', icon: Heart, title: '接新娘', desc: '进入闺房接老婆' },
+                    { time: '08:30', endTime: '09:00', icon: Coffee, title: '吃早餐', desc: '补充能量' },
+                    { time: '09:00', endTime: '09:10', icon: Home, title: '新娘拜祠堂', desc: '带老婆拜祠堂' },
+                    { time: '09:20', endTime: '11:00', icon: Car, title: '返程', desc: '回到男方家中' },
+                    { time: '11:00', endTime: '11:30', icon: BedDouble, title: '安床/敬茶', desc: '铺被子，喝茶水' },
+                    { time: '11:30', endTime: '11:50', icon: Car, title: '前往酒店', desc: '目的地：一州国际大酒店' },
+                    { time: '11:50', endTime: '12:50', icon: UserIcon, title: '妆造时间', desc: '补妆、换主婚纱' },
+                    { time: '13:00', endTime: '13:30', icon: Heart, title: '婚礼仪式', desc: '神圣时刻，举行婚礼' },
+                    { time: '13:30', endTime: '14:00', icon: GlassWater, title: '敬酒环节', desc: '换敬酒服，敬酒吃饭' },
+                    { time: '14:00', endTime: '14:30', icon: Users, title: '送宾客', desc: '感谢亲友，圆满礼成' },
+                ]
+            };
+
+            const currentSchedule = activeTab === 'day1' ? scheduleData.day1 : scheduleData.day2;
+
+            return (
+                <div className="min-h-screen bg-stone-50 font-sans pb-10">
+                    {/* Header */}
+                    <div className="bg-red-700 text-white p-6 sticky top-0 z-50 shadow-lg">
+                        <div className="max-w-md mx-auto text-center">
+                            <h1 className="text-2xl font-bold tracking-wider mb-2">婚礼行程表</h1>
+                            <div className="flex justify-center items-center text-sm bg-red-800/50 py-1 px-3 rounded-full inline-flex">
+                                <Heart className="w-4 h-4 mr-2 fill-current" />
+                                <span>幸福时刻 井然有序</span>
+                                <Heart className="w-4 h-4 ml-2 fill-current" />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Tabs */}
+                    <div className="max-w-md mx-auto p-4">
+                        <div className="flex bg-white rounded-xl p-1 shadow-sm border border-stone-200 mb-6">
+                            <button
+                                onClick={() => setActiveTab('day1')}
+                                className={`flex-1 py-3 text-center rounded-lg font-medium transition-all duration-300 ${
+                                    activeTab === 'day1'
+                                        ? 'bg-red-50 text-red-700 shadow-sm border border-red-100'
+                                        : 'text-stone-500 hover:text-stone-700'
+                                }`}
+                            >
+                                <span className="block text-xs uppercase tracking-wider opacity-70">Day 1</span>
+                                <span className="text-lg">30号 (筹备)</span>
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('day2')}
+                                className={`flex-1 py-3 text-center rounded-lg font-medium transition-all duration-300 ${
+                                    activeTab === 'day2'
+                                        ? 'bg-red-50 text-red-700 shadow-sm border border-red-100'
+                                        : 'text-stone-500 hover:text-stone-700'
+                                }`}
+                            >
+                                <span className="block text-xs uppercase tracking-wider opacity-70">Day 2</span>
+                                <span className="text-lg">31号 (大婚)</span>
+                            </button>
+                        </div>
+
+                        {/* Timeline */}
+                        <div className="space-y-6 relative pl-4">
+                            {/* Vertical Line */}
+                            <div className="absolute left-[27px] top-4 bottom-4 w-0.5 bg-red-100"></div>
+
+                            {currentSchedule.map((item, index) => (
+                                <div key={index} className="relative flex items-start animate-fade-in-up" style={{ animationDelay: `${index * 50}ms` }}>
+                                    {/* Icon Bubble */}
+                                    <div className={`relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-4 border-stone-50 flex items-center justify-center shadow-sm ${
+                                        item.highlight ? 'bg-red-600 text-white' : 'bg-white text-red-500'
+                                    }`}>
+                                        <item.icon className="w-5 h-5" />
+                                    </div>
+
+                                    {/* Content Card */}
+                                    <div className={`ml-4 flex-1 bg-white p-4 rounded-xl shadow-sm border ${
+                                        item.highlight ? 'border-red-200 bg-red-50/50' : 'border-stone-100'
+                                    }`}>
+                                        <div className="flex justify-between items-baseline mb-1">
+                                            <span className={`font-bold text-lg ${item.highlight ? 'text-red-700' : 'text-stone-800'}`}>
+                                                {item.time}
+                                                {item.endTime && <span className="text-sm font-normal text-stone-500 ml-1">~ {item.endTime}</span>}
+                                            </span>
+                                        </div>
+                                        
+                                        <h3 className={`font-bold mb-1 ${item.highlight ? 'text-red-800' : 'text-stone-700'}`}>
+                                            {item.title}
+                                        </h3>
+                                        
+                                        <p className="text-sm text-stone-500 leading-relaxed">
+                                            {item.desc}
+                                        </p>
+
+                                        {/* Special Details Box for the Tea Trays */}
+                                        {item.details && (
+                                            <div className="mt-3 bg-white rounded-lg p-3 border border-red-100 shadow-inner">
+                                                <p className="text-xs font-bold text-red-500 mb-2 uppercase tracking-wide">物品清单 Checklist</p>
+                                                <ul className="space-y-2">
+                                                    {item.details.map((detail, idx) => (
+                                                        <li key={idx} className="flex items-center text-sm text-stone-700">
+                                                            <div className="w-1.5 h-1.5 rounded-full bg-red-400 mr-2"></div>
+                                                            {detail}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
+                            
+                            {/* End Marker */}
+                            <div className="relative flex items-center">
+                                <div className="relative z-10 flex-shrink-0 w-3 h-3 rounded-full bg-red-200 ml-[18px] border-2 border-white"></div>
+                                <div className="ml-8 text-xs text-stone-400 uppercase tracking-widest">End of schedule</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="py-6 text-center text-stone-400 text-sm">
+                        <p>祝百年好合，永结同心</p>
+                    </div>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<WeddingSchedule />);
+    </script>
+</body>
+</html>
