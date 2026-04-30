@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老爸专属护血管与饮食作息指南</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --danger: #dc2626;
+            --success: #16a34a;
+            --warning: #d97706;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 头部样式 */
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+            font-size: 15px;
+        }
+
+        .print-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid white;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .print-btn:hover {
+            background: white;
+            color: #1e40af;
+        }
+
+        /* 核心纪律区 (红黄绿卡片) */
+        .alert-card {
+            background: var(--card-bg);
+            border-left: 5px solid;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .alert-danger { border-color: var(--danger); }
+        .alert-warning { border-color: var(--warning); }
+        .alert-success { border-color: var(--success); }
+
+        .alert-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .alert-danger .alert-title { color: var(--danger); }
+        .alert-warning .alert-title { color: var(--warning); }
+        .alert-success .alert-title { color: var(--success); }
+
+        /* 饮食时刻表 */
+        .meal-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .meal-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        .meal-icon {
+            font-size: 28px;
+            margin-right: 12px;
+        }
+
+        .meal-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .meal-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 600px) {
+            .meal-grid { grid-template-columns: 1fr 1fr 1fr; }
+        }
+
+        .food-item {
+            background: #f1f5f9;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .food-type {
+            font-weight: bold;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .food-list {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .food-list li { margin-bottom: 4px; }
+
+        /* 吃饭顺序特别说明 */
+        .order-box {
+            background: #eff6ff;
+            border: 1px dashed #93c5fd;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .order-arrow {
+            color: #3b82f6;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        /* 每日打卡区 */
+        .checklist {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 16px;
+        }
+
+        .check-item:last-child { border-bottom: none; }
+
+        .check-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        /* 打印专用样式 */
+        @media print {
+            body { background: white; padding: 0; }
+            .print-btn { display: none; }
+            .container { max-width: 100%; box-shadow: none; }
+            .alert-card, .meal-section, .checklist { break-inside: avoid; border: 1px solid #ccc; box-shadow: none; }
+            .header { color: black; background: #f0f0f0; border: 2px solid #000; box-shadow: none;}
+            .header h1, .header p { color: black; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <button class="print-btn" onclick="window.print()">🖨️ 打印贴冰箱</button>
+        <h1>📋 老爸专属护血管与饮食作息指南</h1>
+        <p>最高指令：稳住血压防动脉瘤破裂，死控血糖防70%斑块闭塞！</p>
+    </div>
+
+    <!-- 绝对禁忌 -->
+    <div class="alert-card alert-danger">
+        <div class="alert-title">🚫 绝对禁忌（毒药清单，一口别碰！）</div>
+        <ul>
+            <li><b>软烂碳水：</b>白粥、肠粉、烂面条、汤泡饭。（喝下去秒变糖水，血糖直接飙到18，腐蚀血管）</li>
+            <li><b>老火靓汤：</b>大骨汤、肉汤。（全是盐和废油脂，不仅血压狂飙，还严重加重肾脏排毒负担）</li>
+            <li><b>加工腌制肉：</b>腊肠、腊肉、咸鱼、午餐肉。（盐分极高，吃完血压瞬间升高，容易撑爆动脉瘤）</li>
+            <li><b>猛烈用力：</b>用力排便、猛然回头、提重物。（憋气用力会瞬间推高脑部血压，极其危险）</li>
+        </ul>
+    </div>
+
+    <!-- 吃饭顺序 -->
+    <div class="alert-card alert-success">
+        <div class="alert-title">✅ 黄金吃饭顺序（必须严格执行）</div>
+        <p style="font-size: 14px; margin-top: 5px; color: #64748b;">改变吃饭顺序，等于给血管加了一个“物理避震器”，让糖分缓慢释放。</p>
+        <div class="order-box">
+            <b>喝两口清汤润胃</b> <span class="order-arrow">➔</span> 
+            <b>吃大半碗蔬菜（垫底）</b> <span class="order-arrow">➔</span> 
+            <b>吃肉/蛋/鱼</b> <span class="order-arrow">➔</span> 
+            <b>最后吃杂粮饭</b>
+        </div>
+    </div>
+
+    <!-- 早餐 -->
+    <div class="meal-section">
+        <div class="meal-header">
+            <span class="meal-icon">🌅</span>
+            <h2 class="meal-title">早餐 (7:00 - 8:00)</h2>
+        </div>
+        <p style="font-size: 14px; color: #64748b; margin-top: -10px; margin-bottom: 15px;">早晨胰岛素抵抗最强，坚决不吃易消化的精米面。</p>
+        <div class="meal-grid">
+            <div class="food-item">
+                <div class="food-type"><span>🍚 主食 (选1样)</span> <span style="font-size:12px; color: #dc2626;">少吃</span></div>
+                <ul class="food-list">
+                    <li>半根水煮玉米</li>
+                    <li>拳头大小的蒸红薯/紫薯</li>
+                    <li>生燕麦片煮水 (约30克)</li>
+                    <li>一片全麦面包</li>
+                </ul>
+            </div>
+            <div class="food-item">
+                <div class="food-type"><span>🥚 蛋白质 (选1样)</span></div>
+                <ul class="food-list">
+                    <li>水煮蛋 1个</li>
+                    <li>无糖热豆浆 1杯</li>
+                    <li>纯牛奶 1盒 (莫空腹喝)</li>
+                </ul>
+            </div>
+            <div class="food-item">
+                <div class="food-type"><span>🥬 蔬菜 (必吃)</span> <span style="font-size:12px; color: #16a34a;">强推</span></div>
+                <ul class="food-list">
+                    <li>白灼菜心 1小碗</li>
+                    <li>凉拌黄瓜 1盘</li>
+                    <li>小番茄 5-6 颗</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 午餐 -->
+    <div class="meal-section">
+        <div class="meal-header">
+            <span class="meal-icon">☀️</span>
+            <h2 class="meal-title">午餐 (12:00 - 13:00)</h2>
+        </div>
+        <p style="font-size: 14px; color: #64748b; margin-top: -10px; margin-bottom: 15px;">全天营养重点。采用“分格餐盘”法：一半蔬菜，四分之一肉，四分之一饭。</p>
+        <div class="meal-grid">
+            <div class="food-item">
+                <div class="food-type"><span>🍚 主食 (严控量)</span></div>
+                <ul class="food-list">
+                    <li><b>杂粮饭 1小碗</b></li>
+                    <li>配方：白米与糙米/燕麦米/荞麦按 <b>2:1</b> 比例混合煮。（粗粮壳硬，能锁住糖分慢释放）</li>
+                </ul>
+            </div>
+            <div class="food-item">
+                <div class="food-type"><span>🥩 肉类 (拳头大小)</span></div>
+                <ul class="food-list">
+                    <li>清蒸鱼 (少放蒸鱼豉油)</li>
+                    <li>白切鸡 (必须去皮)</li>
+                    <li>芹菜炒瘦猪肉片</li>
+                    <li>蒸水蛋</li>
+                </ul>
+            </div>
+            <div class="food-item">
+                <div class="food-type"><span>🥬 蔬菜 (占一半)</span></div>
+                <ul class="food-list">
+                    <li>各种深绿色叶菜（菜心/菠菜/芥菜）</li>
+                    <li>西蓝花、冬瓜、丝瓜</li>
+                    <li>做法：水煮后滴两滴香油，或极少油快炒。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 晚餐 -->
+    <div class="meal-section">
+        <div class="meal-header">
+            <span class="meal-icon">🌙</span>
+            <h2 class="meal-title">晚餐 (18:00 - 19:00)</h2>
+        </div>
+        <p style="font-size: 14px; color: #64748b; margin-top: -10px; margin-bottom: 15px;">睡前为肾脏和肠胃减负，吃个七分饱，碳水减半。</p>
+        <div class="meal-grid">
+            <div class="food-item">
+                <div class="food-type"><span>🍚 主食 (极少量)</span></div>
+                <ul class="food-list">
+                    <li>杂粮饭 半碗</li>
+                    <li>煮山药一段 或 芋头两块</li>
+                    <li>注意：如果菜里炒了土豆/莲藕，这顿就别吃米饭了。</li>
+                </ul>
+            </div>
+            <div class="food-item">
+                <div class="food-type"><span>🐟 蛋白质 (易消化)</span></div>
+                <ul class="food-list">
+                    <li>煎老豆腐/水煮豆腐</li>
+                    <li>清炒虾仁</li>
+                    <li>少量瘦肉丝</li>
+                </ul>
+            </div>
+            <div class="food-item">
+                <div class="food-type"><span>🥬 蔬菜 (高纤维)</span></div>
+                <ul class="food-list">
+                    <li>木耳炒白菜 (木耳对血管极好)</li>
+                    <li>蒜蓉油麦菜</li>
+                    <li>凉拌海带丝 (防便秘，防血压飙升)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 日常打卡与加餐 -->
+    <div class="alert-card alert-warning">
+        <div class="alert-title">🕒 下午饿了怎么办？（加餐规则）</div>
+        <p style="font-size: 14px; margin-top: 5px; color: #64748b;">坚决不能吃饼干、沙琪玛等零食！</p>
+        <ul style="margin: 5px 0 0; padding-left: 20px; font-size: 15px;">
+            <li>只能吃：一小把原味坚果（核桃/巴旦木，每天限15克）</li>
+            <li>或者：半个低糖水果（青苹果、猕猴桃、柚子），<b>放在两餐中间吃，绝不能饭后马上吃水果。</b></li>
+        </ul>
+    </div>
+
+    <div class="checklist">
+        <h2 style="margin-top: 0; color: #1e293b; font-size: 20px;">✅ 老爸每日保命打卡清单</h2>
+        <div class="check-item">
+            <input type="checkbox" id="task1">
+            <label for="task1"><b>晨起慢动作：</b> 醒后在床上躺2分钟，坐2分钟，再站起来。（防止体位性低血压摔倒）</label>
+        </div>
+        <div class="check-item">
+            <input type="checkbox" id="task2">
+            <label for="task2"><b>量血压：</b> 早晚各测一次血压并记录。（目标：收缩压控制在130-140之间，切忌过高或过低）</label>
+        </div>
+        <div class="check-item">
+            <input type="checkbox" id="task3">
+            <label for="task3"><b>测血糖：</b> 按医生要求定时扎手指。（重点关注餐后2小时血糖，必须压在10左右）</label>
+        </div>
+        <div class="check-item">
+            <input type="checkbox" id="task4">
+            <label for="task4"><b>按时吃药：</b> 他汀（稳定斑块）、双抗（防血栓）、降压药、降糖药，一颗不落。（这是最重要的底线！）</label>
+        </div>
+        <div class="check-item">
+            <input type="checkbox" id="task5">
+            <label for="task5"><b>顺畅排便：</b> 绝不憋气猛拉。（如果拉不出，立刻用开塞露，千万不能用力撑爆动脉瘤）</label>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
