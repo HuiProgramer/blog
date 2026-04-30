@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老爸专属护血管与饮食作息指南 (湖南定制版)</title>
+    <style>
+        /* ================= 屏幕显示样式 (手机/电脑上看) ================= */
+        :root {
+            --primary: #1e40af;
+            --danger: #dc2626;
+            --success: #16a34a;
+            --warning: #d97706;
+            --info: #0891b2;
+            --bg: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #334155;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .print-page {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .header h1 { margin: 0; font-size: 28px; color: var(--primary); }
+        .header p { margin: 10px 0 0; font-size: 16px; color: var(--danger); font-weight: bold; }
+
+        .print-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .print-btn:hover { background: #1e3a8a; }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+            background: var(--primary);
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 0 -10px 20px -10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--text-main);
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        @media (min-width: 600px) {
+            .menu-grid { grid-template-columns: 1fr 1fr; }
+        }
+        .menu-grid.three-cols { grid-template-columns: 1fr 1fr 1fr; }
+
+        .menu-card {
+            background: #f8fafc;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .menu-card.danger { border-color: #fca5a5; background: #fef2f2; }
+        .menu-card.success { border-color: #86efac; background: #f0fdf4; }
+        .menu-card.warning { border-color: #fcd34d; background: #fffbeb; }
+        .menu-card.hunan { border-color: #f87171; background: #fff5f5; }
+
+        .menu-card h3 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+        .menu-card.danger h3 { color: var(--danger); border-bottom-color: #fca5a5; }
+        .menu-card.hunan h3 { color: #b91c1c; border-bottom-color: #f87171; }
+
+        .menu-list {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 16px;
+            color: var(--text-main);
+        }
+        .menu-list li { margin-bottom: 8px; }
+
+        .instruction-box {
+            background: #fffbeb;
+            border: 2px solid #fbbf24;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        .instruction-box h4 {
+            margin: 0 0 10px 0;
+            color: #b45309;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        .instruction-item {
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+        .how-text { color: var(--success); font-weight: bold; }
+        .why-text { color: var(--danger); font-size: 14px; display: block; margin-top: 4px; padding-left: 10px; border-left: 2px solid #fca5a5; }
+
+        .golden-order {
+            text-align: center;
+            background: #eff6ff;
+            border: 2px dashed #93c5fd;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 15px 0;
+        }
+        .golden-arrow { color: var(--danger); margin: 0 10px; }
+
+
+        /* ================= 打印专用排版 (A4 纸张极致清晰化) ================= */
+        @media print {
+            /* 设定标准的 A4 纸张大小和页边距 */
+            @page {
+                size: A4 portrait;
+                margin: 1.5cm;
+            }
+
+            body {
+                background: white;
+                padding: 0;
+                font-size: 14pt; /* 放大整体字号 */
+                color: black;
+            }
+
+            .print-btn { display: none !important; }
+            .container { max-width: 100%; margin: 0; padding: 0; }
+            
+            /* 每页控制 */
+            .print-page { 
+                box-shadow: none !important; 
+                border: none !important; 
+                padding: 0 !important; 
+                margin: 0 !important; 
+                page-break-after: always; /* 强制分页 */
+                break-after: page;
+            }
+
+            /* 头部精简并加强对比 */
+            .header { border-bottom: 3px solid black; padding-bottom: 10px; margin-bottom: 20px;}
+            .header h1 { color: black !important; font-size: 24pt;}
+            .header p { color: #b91c1c !important; font-size: 14pt;}
+
+            /* 标题改成黑底白框或灰底黑框，极其醒目 */
+            .section-title { 
+                color: black !important; 
+                background: #e2e8f0 !important; 
+                border: 2px solid black !important; 
+                margin: 20px 0 15px 0 !important; 
+                padding: 10px !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                border-radius: 0 !important;
+                font-size: 18pt;
+            }
+
+            /* 取消所有的网格分栏！统一变成从上到下的“单列堆叠”，防止打印机挤压错位 */
+            .menu-grid, .menu-grid.three-cols { 
+                display: block !important; 
+            }
+
+            /* 卡片样式强化：去掉所有底色，变成粗黑边框 */
+            .menu-card, .instruction-box, .golden-order {
+                display: block !important;
+                background: white !important;
+                border: 2px solid black !important;
+                border-radius: 0 !important;
+                margin-bottom: 15px !important;
+                padding: 15px !important;
+                /* 核心：绝对不允许在卡片中间发生跨页断裂！ */
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* 卡片内部标题加强 */
+            .menu-card h3 { 
+                color: black !important; 
+                border-bottom: 2px solid black !important; 
+                padding-bottom: 5px !important;
+                font-size: 16pt;
+                font-weight: bold;
+            }
+
+            /* 特别警告保留红色 */
+            .danger h3, .how-text, .why-text { 
+                color: #b91c1c !important; 
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .why-text {
+                border-left: 3px solid black !important;
+                padding-left: 10px !important;
+                color: black !important; /* 保证黑白打印机也能极度清晰 */
+                font-size: 13pt !important;
+            }
+
+            /* 列表项加高行距，方便老人家阅读 */
+            .menu-list li { margin-bottom: 12px !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ================= 第一页：现状与致命纪律 ================= -->
+    <div class="print-page">
+        <div class="header">
+            <button class="print-btn" onclick="window.print()">🖨️</button>
+            <h1>🚨 老爸专属：护心脑防偏瘫终极指南 🚨</h1>
+            <p>主刀专家警告：血压不稳动脉瘤破裂，血糖狂飙70%血管瞬间堵死！</p>
+        </div>
+
+        <!-- 致命警告：吸烟 -->
+        <div class="instruction-box" style="border: 3px solid #b91c1c;">
+            <h4 style="color: #b91c1c; font-size: 20px; font-weight: bold;">💀 最高死火线：绝不允许偷偷吸哪怕一口烟！</h4>
+            <p style="margin: 5px 0; font-size: 16px; color: #000;"><b>你抽的不是烟，是引爆动脉瘤的导火索！</b><br>
+            只要吸入一口尼古丁，全身血管就会瞬间剧烈痉挛（收缩）。<br>
+            1. 血管一收缩，血压立刻狂飙，<b>脑袋里的动脉瘤随时会被瞬间撑爆（脑出血）！</b><br>
+            2. 痉挛会把右边脖子那块 70% 的斑块直接挤破，瞬间结成血栓死死堵住大脑（脑梗偏瘫）！<br>
+            3. 别忘了你去年刚做过<b>心脏球扩</b>，吸烟会直接毁掉心脏好不容易打通的血管，引发心梗！</p>
+        </div>
+        <br/>
+
+        <!-- 当前情况与预防目标 -->
+        <div class="section-title">⚠️ 你身体里的四个“定时炸弹”</div>
+        <div class="menu-grid">
+            <div class="menu-card danger">
+                <h3>💣 1. 右颈动脉 70% 堵塞</h3>
+                <span class="why-text">斑块像烂泥。血压一高、吃得太油，烂泥破裂掉渣冲进脑子，<b>几秒钟内引发大面积脑梗偏瘫！</b></span>
+            </div>
+            <div class="menu-card danger">
+                <h3>💣 2. 脑部 4.9mm 动脉瘤</h3>
+                <span class="why-text">像血管上鼓起的薄气球。干重活、大便用力、吃太咸导致血压飙升，<b>气球瞬间撑爆，直接脑出血！</b></span>
+            </div>
+            <div class="menu-card danger">
+                <h3>💣 3. 极其脆弱的心脏血管</h3>
+                <span class="why-text">去年做过心脏球扩，说明心脏血管底子极差。现在的饮食和吃药，也是在保心脏不发生致命心梗。</span>
+            </div>
+            <div class="menu-card danger">
+                <h3>💣 4. 飙升的餐后血糖</h3>
+                <span class="why-text">吃白粥、软白米饭会让血糖飙到18，高糖血液像硫酸一样严重腐蚀全身血管内壁。</span>
+            </div>
+        </div>
+
+        <div class="section-title">✅ 每顿饭的“黄金保命顺序”</div>
+        <div class="golden-order">
+            喝两口清汤润胃 <span class="golden-arrow">➔</span> 先吃大半碗青菜垫底 <span class="golden-arrow">➔</span> 再吃肉和鱼 <span class="golden-arrow">➔</span> 最后吃杂粮饭
+            <div class="why-text" style="margin-top: 15px; font-weight: normal; text-align: left;">
+                <b>专家原理：</b>先吃青菜，能在胃里铺一层厚厚的纤维“减速带”。最后吃的米饭就会被拦住，糖分只能极其缓慢地漏进血液里，餐后血糖绝对不会狂飙！
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 第二页：早午餐与湘菜改造 ================= -->
+    <div class="print-page">
+        <div class="section-title">🌅 老爸的【早餐】菜单选择</div>
+        <p style="color: var(--danger); font-weight: bold; font-size: 16px;">⚠️ 警告：早晨身体抵抗胰岛素能力最强，绝不能吃衡阳米粉、白粥和油条！</p>
+        
+        <div class="menu-grid">
+            <div class="menu-card success">
+                <h3>套餐 A：燕麦鸡蛋餐</h3>
+                <ul class="menu-list">
+                    <li>原味生燕麦片煮水 (1小碗)</li>
+                    <li>水煮鸡蛋 1 个</li>
+                    <li>白灼菜心 或 烫生菜 1 碟</li>
+                </ul>
+            </div>
+            <div class="menu-card success">
+                <h3>套餐 B：粗粮豆浆餐</h3>
+                <ul class="menu-list">
+                    <li>水煮玉米半根 或 蒸红薯</li>
+                    <li>无糖纯鲜豆浆 1 大杯</li>
+                    <li>凉拌拍黄瓜 / 凉拌海带丝 1 碟</li>
+                </ul>
+            </div>
+            <div class="menu-card success">
+                <h3>套餐 C：全麦包子餐</h3>
+                <ul class="menu-list">
+                    <li>纯全麦馒头 或 菜包 1 个</li>
+                    <li>温热纯牛奶 1 盒</li>
+                    <li>水煮秋葵 或 烫菠菜 1 碟</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-title">🌶️ 专属低油低盐“健康湘菜”改造法</div>
+        <div class="instruction-box">
+            <p style="margin-top:0; font-size: 16px; color: #b91c1c;"><b>湖南人不怕辣，就怕油和盐！</b> 辣椒本身不升血糖还能促代谢，但湘菜里的红油和重盐是血管第一杀手。</p>
+            <ul style="margin-bottom: 0; font-size: 16px; line-height: 1.8;">
+                <li><b>允许吃的辣：</b> 新鲜小米辣、青线椒、干辣椒段、纯辣椒粉。可以用它们搭配蒜末、醋做蘸水。</li>
+                <li><b>绝对禁止的辣：</b> 辣椒油、老干妈、红油豆瓣酱、重盐腌制的剁辣椒。（全是油和盐，吃一口血压就压不住）。</li>
+                <li><b>炒菜保命绝招（水油焖炒）：</b> 锅里只放极少一点点油，爆香青红椒和蒜末，下肉片和青菜翻炒，<b>立刻加半碗水盖锅盖焖熟</b>。保留了辣味，去掉了夺命的油脂！</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ================= 第三页：午餐、晚餐与加餐 ================= -->
+    <div class="print-page">
+        <div class="section-title">☀️ 老爸的【午餐】菜单（选1荤+2素）</div>
+        <p style="font-size: 16px; font-weight: bold;">中午必须吃【杂粮饭】(白大米:糙米=2:1)。千万不能吃纯白米饭。</p>
+
+        <div class="menu-grid">
+            <div class="menu-card hunan">
+                <h3>🥩 午餐荤菜库 (湘味改良版，选 1 样)</h3>
+                <ul class="menu-list">
+                    <li><b>青椒炒瘦肉：</b>少油，绝不放肥肉。</li>
+                    <li><b>清蒸鲩鱼/鲈鱼：</b>上面可以铺一点新鲜切碎的红尖椒和姜丝提味，少倒蒸鱼豉油。</li>
+                    <li><b>芹菜香干炒肉丝：</b>芹菜降压极好。</li>
+                    <li><b>黄焖鸡块：</b>必须去鸡皮，少酱油。</li>
+                </ul>
+            </div>
+            <div class="menu-card hunan">
+                <h3>🥬 午餐素菜库 (多吃，选 2 样占盘子一半)</h3>
+                <ul class="menu-list">
+                    <li><b>蒜蓉炒空心菜 / 番薯叶</b></li>
+                    <li><b>青椒焖茄子：</b>茄子千万别过油炸，用水煮软后凉拌，放点青椒圈。</li>
+                    <li><b>香菇炒菜心 / 清炒冬瓜</b></li>
+                    <li><b>凉拌木耳/黄瓜：</b>放陈醋、小米辣、蒜末拌，绝对不准淋辣椒油。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-title">🌙 老爸的【晚餐】菜单选择</div>
+        <p style="font-size: 16px; font-weight: bold;">晚上为肾脏减负，吃七分饱。如果晚餐菜里炒了土豆、莲藕，绝对不要再吃米饭！</p>
+
+        <div class="menu-grid">
+            <div class="menu-card hunan">
+                <h3>🐟 晚餐高蛋白 (易消化，不伤肾，选 1 样)</h3>
+                <ul class="menu-list">
+                    <li><b>青椒焖老豆腐：</b>豆腐植物蛋白极好，不伤肾脏。</li>
+                    <li><b>白灼基围虾：</b>去壳蘸生抽小米辣吃。</li>
+                    <li><b>肉沫蒸嫩豆腐 / 清炒魔芋豆腐</b></li>
+                </ul>
+            </div>
+            <div class="menu-card">
+                <h3>🥬 晚餐清肠蔬菜 (必须吃，通便防爆血管，选 2 样)</h3>
+                <ul class="menu-list">
+                    <li><b>海带丝 / 紫菜结：</b> 通便神器。</li>
+                    <li><b>山药炒木耳：</b> 木耳清血管。</li>
+                    <li><b>白萝卜丝煮肉片</b></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="instruction-box">
+            <h4 style="color: #b91c1c;">🕒 下午/晚上饿了怎么办？（加餐保命规则）</h4>
+            <div class="instruction-item">
+                <span class="why-text">绝对禁止：如果喊饿，坚决不能翻饼干、沙琪玛、面包条给他吃！吃下去前功尽弃！也不能刚吃完饭就切水果吃。</span>
+            </div>
+            <div class="instruction-item">
+                <b>正确对策（放在下午3点吃）：</b><br>
+                1. 剥 7-8 颗原味核桃、花生（每天限一小把，油脂软化血管）。<br>
+                2. 切半个青苹果、奇异果，或者吃 5 颗小番茄。<br>
+                3. 喝半杯无糖温热豆浆。
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 第四页：用药与干活死线 ================= -->
+    <div class="print-page">
+        <div class="section-title">💊 终极死线：保命用药与【日常干活】纪律</div>
+        
+        <div class="section-subtitle">一、日常干活与动作（极度危险，必须制止）</div>
+        <div class="menu-grid">
+            <div class="menu-card danger">
+                <h3>❌ 绝对严禁：任何“憋气发力”的动作（如提重物、用力拉屎）</h3>
+                <span class="why-text"><b>致命原理：</b> 当老爸憋气用力去提一袋米、搬一桶水，或者在马桶上用力排便时，胸腔压力急剧上升，<b>导致脑部血压在几秒钟内瞬间飙高 50 到 100！</b>脑袋里那个 4.9mm 的动脉瘤绝对扛不住这种瞬间高压，一旦撑爆，当场脑出血！<br>
+                <b>【硬性对策】：家里重活全交给年轻人。大便拉不出立刻用开塞露，绝不能硬憋。</b></span>
+            </div>
+            <div class="menu-card danger">
+                <h3>❌ 绝对严禁：猛然回头、剧烈转脖子</h3>
+                <span class="why-text"><b>致命原理：</b> 他颈动脉 70% 处挂着极其危险的斑块。如果别人在背后叫他，他猛地一扭脖子，或者做剧烈的颈椎操，极容易把斑块“甩”下来一块，导致当场头晕晕倒或脑梗死。<br>
+                <b>【硬性对策】：转身必须连着身子一起慢慢转。允许的运动仅限：晚饭后在平地上慢走 30 分钟。一旦觉得头晕，立刻坐下休息！</b></span>
+            </div>
+        </div>
+
+        <div class="section-subtitle">二、四类“保命药”怎么吃？（每天当做任务盯紧）</div>
+        <div class="menu-grid">
+            <div class="menu-card warning">
+                <h3>💊 1. 他汀类（如阿托伐/瑞舒伐他汀）</h3>
+                <p style="margin: 5px 0; font-size: 16px;"><b>作用：</b> 把软泥斑块变成坚硬水泥，防破裂。<br>
+                <b>注意：</b> 建议<b>晚上睡前吃</b>（肝脏在夜间合成胆固醇）。如果老爸抱怨腿部肌肉酸痛无力，要立刻告诉医生，这可能是副作用。</p>
+            </div>
+            <div class="menu-card warning">
+                <h3>💊 2. 抗血小板药（如阿司匹林/波立维）</h3>
+                <p style="margin: 5px 0; font-size: 16px;"><b>作用：</b> 保护脖子斑块不长血栓，同时<b>保护心脏球扩血管不堵死。</b><br>
+                <b>注意：</b> <b>绝对不能私自停药！</b> 平时留意大便是不是发黑（像柏油一样黑说明胃出血），有情况及时复诊。</p>
+            </div>
+            <div class="menu-card warning">
+                <h3>💊 3. 降压药</h3>
+                <p style="margin: 5px 0; font-size: 16px;"><b>作用：</b> 死死压住血压，保护脑部动脉瘤不破裂。<br>
+                <b>注意：</b> 每天必须在<b>固定时间</b>吃。千万不要觉得“今天量血压正常了，我就不吃了”，一旦停药，血压反弹极其危险。</p>
+            </div>
+            <div class="menu-card warning">
+                <h3>💊 4. 降糖药 / 胰岛素</h3>
+                <p style="margin: 5px 0; font-size: 16px;"><b>作用：</b> 压住餐后飙升的糖水，保护全身血管内壁。<br>
+                <b>注意：</b> 严格按医生嘱咐吃。如果突然手抖、心慌、出冷汗，这是<b>低血糖</b>，比高血糖更致命！马上给他塞一颗糖果救急。</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
